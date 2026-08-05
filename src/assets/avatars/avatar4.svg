@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="#F3E9FB"/>
+
+  <!-- shoulders / shirt -->
+  <path d="M38 200 C38 152 66 122 100 122 C134 122 162 152 162 200 Z" fill="#FFFFFF"/>
+
+  <!-- neck -->
+  <rect x="86" y="104" width="28" height="26" fill="#8D5A3B"/>
+
+  <!-- face -->
+  <circle cx="100" cy="80" r="36" fill="#8D5A3B"/>
+
+  <!-- ears -->
+  <circle cx="64" cy="82" r="6" fill="#8D5A3B"/>
+  <circle cx="136" cy="82" r="6" fill="#8D5A3B"/>
+
+  <!-- hair (dome, professional short cut) -->
+  <path d="M64 82
+           C62 56 78 40 100 40
+           C122 40 138 56 136 82
+           C132 66 118 52 100 52
+           C82 52 68 66 64 82 Z" fill="#14100E"/>
+
+  <!-- tie knot + tie -->
+  <path d="M88 124 L100 140 L112 124 L106 118 L100 126 L94 118 Z" fill="#7B3FE4"/>
+  <path d="M95 140 L105 140 L109 200 L91 200 Z" fill="#7B3FE4"/>
+
+  <!-- collar -->
+  <path d="M88 124 C76 130 64 142 56 160 L66 168 C72 152 80 140 92 132 Z" fill="#F3F5FA"/>
+  <path d="M112 124 C124 130 136 142 144 160 L134 168 C128 152 120 140 108 132 Z" fill="#F3F5FA"/>
+</svg>
