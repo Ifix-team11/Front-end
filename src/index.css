@@ -38,6 +38,17 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* width: 1126px;
+  max-width: 100%; */
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  direction: rtl;
 }
 
 a {
@@ -47,6 +58,13 @@ a {
 
 button {
   font-family: inherit;
+h1,
+h2,
+h3,
+p {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
 }
 
 .ifix-container {
@@ -61,4 +79,9 @@ button {
 ::-webkit-scrollbar-thumb {
   background: #d7dae5;
   border-radius: 8px;
+}
+
+/* Force sans-serif on inputs, buttons, and textareas */
+input, button, select, textarea, .form-control, .form-select, .btn {
+  font-family: sans-serif !important;
 }
