@@ -1,0 +1,163 @@
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.formSection {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.formSection::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.imageSection {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+.imageSection::before {
+  display: none;
+}
+
+.illustrationImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,.08));
+}
+
+/* ========================= */
+/* PASSWORD EYE */
+/* ========================= */
+
+.eyeButton {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.eyeButton:hover {
+  color: #4b5563;
+}
+
+/* ========================= */
+/* OFFCANVAS */
+/* ========================= */
+
+.offcanvasBody {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.offcanvasBody::before {
+  display: none;
+}
+
+/* ========================= */
+/* MOBILE BUTTON */
+/* ========================= */
+
+.mobileIllustrationBtn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1050;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #2b5adb;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 14px rgba(43,90,219,.4);
+
+  transition: .2s;
+}
+
+.mobileIllustrationBtn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.mobileIllustrationBtn:active {
+  transform: scale(.95);
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width:768px){
+
+  .formSection{
+    height:auto;
+    overflow:visible;
+     display: block;
+  }
+
+  .imageSection{
+    display:none;
+  }
+
+}
+@media (min-width: 769px) {
+
+  .pageWrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .formSection {
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .formSection::-webkit-scrollbar {
+    display: none;
+  }
+
+}
