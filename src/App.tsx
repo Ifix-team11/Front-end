@@ -1,14 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
-import Register from "./Components/Register/Register";
-import Login from "./Components/Login/Login";
-import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import Register from "./Pages/Register/Register";
+import Login from "./Pages/Login/Login";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 
-import TechniciansListPage from "./pages/TechniciansListPage/TechniciansListPage";
-import TechnicianDetailPage from "./pages/TechnicianDetailPage/TechnicianDetailPage";
-import CentersListPage from "./pages/CentersListPage/CentersListPage";
-import CenterDetailPage from "./pages/CenterDetailPage/CenterDetailPage";
+import TechniciansListPage from "./Pages/TechniciansListPage/TechniciansListPage";
+import TechnicianDetailPage from "./Pages/TechnicianDetailPage/TechnicianDetailPage";
+import CentersListPage from "./Pages/CentersListPage/CentersListPage";
+// import CenterDetailPage from ".Pages/CenterDetailPage/CenterDetailPage";
+import CenterDetailPage from "./Pages/CenterDetailPage/CenterDetailPage";
 
 const router = createBrowserRouter([
   {
