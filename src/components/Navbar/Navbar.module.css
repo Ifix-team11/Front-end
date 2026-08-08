@@ -16,6 +16,14 @@
   font-weight: 800;
   color: var(--ifix-navy);
   letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .logoAccent {

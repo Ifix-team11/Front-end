@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/image 3.png";
 import styles from "./Navbar.module.css";
 
 const links = [
@@ -48,7 +49,7 @@ const Navbar = () => {
         </ul>
 
         <Link to="/" className={styles.logo}>
-          i<span className={styles.logoAccent}>FIX</span>
+          <img src={logo} alt="iFix" className={styles.logoImg} />
         </Link>
       </div>
     </header>
