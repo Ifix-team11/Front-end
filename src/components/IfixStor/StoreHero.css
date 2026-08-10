@@ -1,0 +1,348 @@
+
+/* =========================
+   Store Page
+========================= */
+
+.store-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  font-family: "Cairo", sans-serif;
+}
+
+/* =========================
+   Breadcrumb
+========================= */
+
+.store-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 12px auto 18px;
+  padding: 0 20px;
+
+  gap: 8px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  box-sizing: border-box;
+}
+
+.store-breadcrumb-active {
+  color: #2860d9;
+}
+
+.store-breadcrumb-separator {
+  color: #9ca3af;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.store-hero {
+  width: 100%;
+}
+
+.store-hero-container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1180px;
+
+  min-height: 164px;
+
+  margin: 0 auto;
+  padding: 8px 12px;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f8faff 100%
+  );
+
+  direction: ltr;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   Hero Image
+========================= */
+
+.store-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 230px;
+  height: 145px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.store-hero-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =========================
+   Hero Content
+========================= */
+
+.store-hero-content {
+  display: flex;
+
+  flex: 1;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-right: 30px;
+  padding-left: 30px;
+
+  direction: rtl;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   Badge + Arrow
+========================= */
+
+.store-hero-victor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* =========================
+   Badge
+========================= */
+
+.store-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  background: #edf3ff;
+  border-radius: 18px;
+  color: #3865c9;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.Victor{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================
+   Badge Icon
+========================= */
+
+.store-hero-badge-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+.store-hero-badge-icon img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+
+/* =========================
+   Title
+========================= */
+
+.store-hero-title {
+  position: relative;
+
+  display: inline-block;
+}
+
+.store-hero-title h1 {
+  margin: 0;
+
+  color: #1d2a3a;
+
+  font-size: 39px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+/* =========================
+   Description
+========================= */
+
+.store-hero-description {
+  margin: 2px 0 0;
+
+  color: #5d6878;
+
+  font-size: 25px;
+  font-weight: 400;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 992px) {
+  .store-hero-container {
+    min-height: 150px;
+  }
+
+  .store-hero-image {
+    width: 210px;
+    height: 130px;
+  }
+
+  .store-hero-content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .store-hero-badge {
+    font-size: 12px;
+  }
+
+  .store-hero-title h1 {
+    font-size: 20px;
+  }
+
+  .store-hero-description {
+    font-size: 14px;
+  }
+
+  .store-hero-arrow {
+    left: -40px;
+    bottom: -20px;
+
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+  .store-breadcrumb {
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .store-hero-container {
+    min-height: auto;
+
+    padding: 15px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .store-hero-image {
+    width: 100%;
+    max-width: 300px;
+
+    height: 170px;
+  }
+
+  .store-hero-content {
+    width: 100%;
+
+    padding: 0;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .store-hero-badge {
+    max-width: 100%;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    white-space: normal;
+  }
+
+  .store-hero-title h1 {
+    font-size: 20px;
+  }
+
+  .store-hero-arrow {
+    display: none;
+  }
+
+  .store-hero-description {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 480px) {
+  .store-hero-container {
+    padding: 10px;
+  }
+
+  .store-hero-image {
+    height: 150px;
+  }
+
+  .store-hero-title h1 {
+    font-size: 18px;
+  }
+
+  .store-hero-badge {
+    font-size: 9px;
+  }
+
+  .store-hero-description {
+    font-size: 12px;
+  }
+}

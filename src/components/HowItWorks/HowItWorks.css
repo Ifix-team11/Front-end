@@ -1,0 +1,217 @@
+.how-it-works {
+  margin-top: 140px;
+  margin-bottom: 95px;
+  position: relative;
+  min-height: 347px;
+  overflow: hidden;
+  background: linear-gradient(110deg, #3569e8 0%, #263f8c 100%);
+  color: #fff;
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+}
+
+/* Container */
+.how-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 38px;
+}
+
+/* Header */
+.how-heading {
+  text-align: center;
+}
+
+.how-heading h2 {
+  margin: 0;
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.how-heading h2 span {
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 7px;
+}
+
+.how-heading p {
+  margin: 5px 0 45px;
+  color: #dbe5ff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Steps */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  direction: rtl;
+  gap: 35px;
+}
+
+.how-step {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Icon */
+.step-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 15px;
+  display: grid;
+  place-items: center;
+  background: #f1f4ff;
+  border-radius: 7px;
+  color: #2861eb;
+  position: relative;
+}
+
+/* Number circle */
+.step-icon::before {
+  content: "1";
+  position: absolute;
+  top: -8px;
+  right: -7px;
+
+  width: 18px;
+  height: 18px;
+
+  background: white;
+  color: #2861eb;
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-icon {
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -8px;
+  right: -7px;
+
+  width: 18px;
+  height: 18px;
+
+  object-fit: contain;
+}
+
+.step-icon svg {
+  width: 22px;
+  height: 22px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Text */
+.how-step h3 {
+  margin: 0 0 5px;
+
+  /* color: #fff; */
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.how-step p {
+  width: 150px;
+  margin: auto;
+  color: #e0e7fb;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Dotted arrows */
+.flow-arrow {
+  position: absolute;
+
+  top: 25px;
+
+  left: -65px;
+
+  width: 120px;
+  height: 45px;
+
+  fill: none;
+
+  stroke: white;
+
+  stroke-width: 1.5;
+
+  stroke-dasharray: 3 4;
+
+  stroke-linecap: round;
+
+  z-index: 1;
+}
+
+/* Bottom wave */
+.bottom-wave {
+  position: absolute;
+
+  bottom: -1px;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 45px;
+
+  z-index: 3;
+}
+
+.bottom-wave svg {
+  width: 100%;
+
+  height: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  .how-it-works {
+    padding-bottom: 40px;
+  }
+
+  .how-container {
+    padding: 35px 20px 50px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px 20px;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-heading h2 {
+    font-size: 22px;
+  }
+}
