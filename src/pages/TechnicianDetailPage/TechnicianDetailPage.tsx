@@ -48,7 +48,7 @@ const TechnicianDetailPage = () => {
 
   return (
     <div className={styles.page}>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className={`ifix-container ${styles.content}`}>
         <div className={styles.breadcrumb}>
@@ -216,7 +216,7 @@ const TechnicianDetailPage = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
