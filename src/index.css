@@ -1,8 +1,15 @@
 /*
+==================================================
+OLD CSS - home-order
+Kept as a comment for reference
+==================================================
+
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
 
 * {
   font-family: "Tajawal", sans-serif;
+}
+
 @import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
 :root {
@@ -47,8 +54,6 @@ body {
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
   font-family: sans-serif;
   direction: rtl;
@@ -87,7 +92,6 @@ p {
   border-radius: 8px;
 }
 
-/* Force sans-serif on inputs, buttons, and textareas */
 input,
 button,
 select,
@@ -97,14 +101,25 @@ textarea,
 .btn {
   font-family: sans-serif !important;
 }
+
+==================================================
+END OLD CSS
+==================================================
 */
 
-/* ========================================================= */
-/* Current CSS - main */
-/* ========================================================= */
+
+/* ==================================================
+   CURRENT CSS
+   ================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
+
 @import "bootstrap/dist/css/bootstrap.rtl.min.css";
+
+
+/* ==================================================
+   CSS Variables
+   ================================================== */
 
 :root {
   --ifix-navy: #0b1642;
@@ -121,11 +136,20 @@ textarea,
   --ifix-radius-sm: 10px;
 }
 
-/* Global */
+
+/* ==================================================
+   Global
+   ================================================== */
+
 * {
   box-sizing: border-box;
   font-family: "Tajawal", sans-serif;
 }
+
+
+/* ==================================================
+   HTML & Body
+   ================================================== */
 
 html,
 body {
@@ -141,7 +165,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* React root */
+
+/* ==================================================
+   React Root
+   ================================================== */
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -149,13 +177,21 @@ body {
   direction: rtl;
 }
 
-/* Links */
+
+/* ==================================================
+   Links
+   ================================================== */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Buttons & Forms */
+
+/* ==================================================
+   Buttons & Forms
+   ================================================== */
+
 button,
 input,
 select,
@@ -166,7 +202,11 @@ textarea,
   font-family: "Tajawal", sans-serif !important;
 }
 
-/* Headings */
+
+/* ==================================================
+   Headings
+   ================================================== */
+
 h1,
 h2,
 h3,
@@ -177,7 +217,11 @@ p {
   font-family: "Tajawal", sans-serif;
 }
 
-/* Main container */
+
+/* ==================================================
+   Main Container
+   ================================================== */
+
 .ifix-container {
   width: 100%;
   max-width: 1200px;
@@ -185,7 +229,11 @@ p {
   padding: 0 32px;
 }
 
-/* Scrollbar */
+
+/* ==================================================
+   Scrollbar
+   ================================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -199,10 +247,13 @@ p {
   background: transparent;
 }
 
-/* Mobile */
+
+/* ==================================================
+   Mobile
+   ================================================== */
+
 @media (max-width: 768px) {
   .ifix-container {
     padding: 0 20px;
   }
 }
-
