@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+// import Navbar from "../../components/Navbar/Navbar";
+// import Footer from "../../components/Footer/Footer";
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import TechnicianCard from "../../components/TechnicianCard/TechnicianCard";
 import { technicians, reviews, brandLogos } from "../../data/mockData";
