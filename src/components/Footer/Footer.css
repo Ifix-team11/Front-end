@@ -1,0 +1,259 @@
+.footer {
+  width: 100%;
+  background: #162b62;
+  color: #fff;
+  font-family: "Tajawal", sans-serif;
+}
+
+.footer-container {
+  max-width: 1092px;
+  min-height: 228px;
+  margin: 0 auto;
+  padding: 42px 0 35px;
+
+  display: grid;
+  grid-template-columns: 1.45fr 0.8fr 1fr 0.8fr;
+  align-items: start;
+  column-gap: 55px;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-brand {
+  text-align: right;
+  padding-top: 8px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  direction: ltr;
+
+  margin-bottom: 8px;
+
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -3px;
+  color: #fff;
+}
+
+.footer-logo > span:first-child {
+  color: #2870f5;
+}
+
+.footer-logo .logo-x {
+  color: #2870f5;
+  margin-left: -2px;
+}
+
+.footer-brand p {
+  max-width: 275px;
+  margin: 0 0 0 auto;
+
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* =========================
+   COLUMNS
+========================= */
+
+.footer-column {
+  text-align: right;
+}
+
+.footer-column h3 {
+  margin: 5px 0 15px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-explore nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.footer-explore a {
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-explore a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  background: #fff;
+  color: #294999;
+}
+
+.contact-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.footer-social {
+  text-align: right;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.social-links a {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+
+  color: #fff;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-links svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links .fill-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+  .footer-container {
+    max-width: 90%;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand p {
+    max-width: 400px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 575px) {
+  .footer-container {
+    max-width: 100%;
+    min-height: auto;
+    padding: 35px 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+
+  .footer-column {
+    text-align: right;
+  }
+
+  .footer-contact {
+    align-items: flex-start;
+  }
+
+  .footer-social {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-logo {
+    font-size: 34px;
+  }
+}

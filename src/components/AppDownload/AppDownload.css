@@ -1,0 +1,253 @@
+/* =========================
+   App Download Section
+========================= */
+
+.app-download {
+  padding: 7px 14px 22px;
+  background: #fff;
+}
+
+/* =========================
+   Main Box
+========================= */
+
+.app-download-box {
+  position: relative;
+
+  display: flex;
+
+  height: 202px;
+  max-width: 1076px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background-color: #294999;
+  background-image: url("../../assets/SVG/Frame-1.svg");
+  background-repeat: repeat;
+  background-size: 35px 35px;
+}
+
+/* =========================
+   Content
+========================= */
+
+.app-download-content,
+.app-download-phone-preview {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   Right Content
+========================= */
+
+.app-download-content {
+  z-index: 2;
+
+  width: 58%;
+
+  padding: 26px 25px 0 10px;
+
+  text-align: right;
+}
+
+.app-download-content h2 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  line-height: 1.5;
+}
+
+.app-download-content p {
+  margin: 7px 0 31px;
+
+  color: #e1e8ff;
+
+  font-size: 15px;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   Store Badges
+========================= */
+
+.app-download-badges {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-wrap: nowrap;
+
+  gap: 10px;
+}
+
+/* =========================
+   Single Badge
+========================= */
+
+.app-download-badge {
+  display: flex;
+
+  direction: ltr;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+
+  border-radius: 6px;
+
+  background: #050505;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  line-height: 1;
+}
+
+.app-download-badge > span:last-child {
+  display: grid;
+
+  gap: 3px;
+}
+
+.app-download-badge small {
+  font-size: 8px;
+}
+
+.app-download-badge strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* =========================
+   Badge Sizes
+========================= */
+
+.app-download-gallery {
+  width: 145px;
+  gap: 9px;
+}
+
+.app-download-google {
+  width: 148px;
+  gap: 8px;
+}
+
+.app-download-apple {
+  width: 132px;
+  gap: 7px;
+}
+
+/* =========================
+   Badge Icons
+========================= */
+
+.app-download-badge img {
+  display: block;
+
+  width: 35px;
+  height: 35px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   Phone Mockups
+========================= */
+
+.app-download-phone-preview {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 360px;
+}
+
+.app-download-phone {
+  position: absolute;
+
+  width: 116px;
+  height: 245px;
+
+  border-radius: 8px;
+
+  background: #dedede;
+
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
+}
+
+.app-download-phone-one {
+  top: 24px;
+  left: 45px;
+
+  transform: rotate(-19deg);
+}
+
+.app-download-phone-two {
+  top: 38px;
+  left: 188px;
+
+  transform: rotate(-19deg);
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+  .app-download-content {
+    width: 64%;
+  }
+
+  .app-download-content p {
+    white-space: normal;
+  }
+
+  .app-download-phone-preview {
+    min-width: 270px;
+  }
+
+  .app-download-phone-two {
+    left: 160px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+  .app-download-box {
+    height: auto;
+
+    min-height: 280px;
+  }
+
+  .app-download-content {
+    width: 100%;
+
+    padding: 30px 24px;
+  }
+
+  .app-download-badges {
+    flex-wrap: wrap;
+  }
+
+  .app-download-phone-preview {
+    display: none;
+  }
+}

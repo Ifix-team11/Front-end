@@ -1,0 +1,58 @@
+import type { Technician } from "./types";
+
+export const technicians: Technician[] = [
+    {
+        id: 1,
+        name: "محمد أحمد",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+120 عملية إصلاح",
+        rating: 4.9,
+        price: 200,
+        photo: "https://i.pravatar.cc/160?img=12",
+    },
+    {
+        id: 2,
+        name: "محمد علي",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+95 عملية إصلاح",
+        rating: 4.8,
+        price: 180,
+        photo: "https://i.pravatar.cc/160?img=13",
+    },
+    {
+        id: 3,
+        name: "محمد علي",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+95 عملية إصلاح",
+        rating: 4.8,
+        price: 180,
+        photo: "https://i.pravatar.cc/160?img=13",
+    },
+    {
+        id: 4,
+        name: "محمد علي",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+95 عملية إصلاح",
+        rating: 4.8,
+        price: 180,
+        photo: "https://i.pravatar.cc/160?img=13",
+    },
+    {
+        id: 5,
+        name: "محمد علي",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+95 عملية إصلاح",
+        rating: 4.8,
+        price: 180,
+        photo: "https://i.pravatar.cc/160?img=13",
+    },
+    {
+        id: 6,
+        name: "محمد علي",
+        specialty: "فني أجهزة منزلية",
+        repairs: "+95 عملية إصلاح",
+        rating: 4.8,
+        price: 180,
+        photo: "https://i.pravatar.cc/160?img=13",
+    },
+];

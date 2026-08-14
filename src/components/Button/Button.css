@@ -1,0 +1,46 @@
+.auth-buttons{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 8px;
+}
+.btn {
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-family: "Tajawal", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary */
+
+.primary {
+  background: linear-gradient(
+    93deg,
+    #3060e4 5.05%,
+    rgba(27, 53, 126, 0.98) 113.19%
+  );
+
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+
+.secondary {
+  background: transparent;
+  color: #475e75;
+  border: 1px solid #475e75;
+  font-weight: 400;
+}
+
+.secondary:hover {
+  background: #3060e4;
+  color: white;
+  border-color: #3060e4;
+}
