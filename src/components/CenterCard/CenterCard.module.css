@@ -1,0 +1,121 @@
+.card {
+  border: 1px solid var(--ifix-border);
+  border-radius: var(--ifix-radius);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.banner {
+  height: 90px;
+  background: linear-gradient(135deg, #0d1330 0%, #1c2550 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+}
+
+.body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ifix-navy);
+}
+
+.specialty {
+  font-size: 12px;
+  color: var(--ifix-text-muted);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--ifix-text-muted);
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verifiedBadge {
+  color: var(--ifix-blue);
+}
+
+.priceRow {
+  font-size: 12px;
+  color: var(--ifix-text-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ifix-navy);
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btnBook {
+  flex: 1;
+  background: var(--ifix-navy);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.btnProfile {
+  flex: 1;
+  background: #fff;
+  color: var(--ifix-navy);
+  border: 1px solid var(--ifix-border);
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+}

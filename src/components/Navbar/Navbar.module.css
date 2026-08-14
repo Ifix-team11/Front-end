@@ -1,0 +1,87 @@
+.header {
+  border-bottom: 1px solid var(--ifix-border);
+  background: #fff;
+  padding: 14px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ifix-navy);
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.logoAccent {
+  color: var(--ifix-blue);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4f63;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.navLinkActive {
+  color: var(--ifix-navy);
+  font-weight: 700;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--ifix-blue);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnOutline {
+  border: 1px solid var(--ifix-border);
+  background: #fff;
+  color: var(--ifix-navy);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btnFilled {
+  border: none;
+  background: var(--ifix-navy);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .nav {
+    display: none;
+  }
+}

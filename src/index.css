@@ -1,5 +1,196 @@
+/**
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
 
 * {
   font-family: "Tajawal", sans-serif;
+@import "bootstrap/dist/css/bootstrap.rtl.min.css";
+
+:root {
+  --ifix-navy: #0b1642;
+  --ifix-navy-dark: #081030;
+  --ifix-blue: #1450ff;
+  --ifix-blue-dark: #0f3fd6;
+  --ifix-blue-light: #eef2ff;
+  --ifix-text: #0b1642;
+  --ifix-text-muted: #8a90a3;
+  --ifix-border: #e7e9f0;
+  --ifix-bg: #f7f8fb;
+  --ifix-star: #ffb400;
+  --ifix-radius: 14px;
+  --ifix-radius-sm: 10px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  background: #ffffff;
+  color: var(--ifix-text);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* width: 1126px;
+  max-width: 100%; */
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;}
+h1,
+h2,
+h3,
+p {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.ifix-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d7dae5;
+  border-radius: 8px;
+}
+
+/* Force sans-serif on inputs, buttons, and textareas */
+input, button, select, textarea, .form-control, .form-select, .btn {
+  font-family: sans-serif !important;
+}
+**/
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
+@import "bootstrap/dist/css/bootstrap.rtl.min.css";
+
+:root {
+  --ifix-navy: #0b1642;
+  --ifix-navy-dark: #081030;
+  --ifix-blue: #1450ff;
+  --ifix-blue-dark: #0f3fd6;
+  --ifix-blue-light: #eef2ff;
+  --ifix-text: #0b1642;
+  --ifix-text-muted: #8a90a3;
+  --ifix-border: #e7e9f0;
+  --ifix-bg: #f7f8fb;
+  --ifix-star: #ffb400;
+  --ifix-radius: 14px;
+  --ifix-radius-sm: 10px;
+}
+
+/* Global */
+* {
+  box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--ifix-text);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* React root */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons & Forms */
+button,
+input,
+select,
+textarea,
+.form-control,
+.form-select,
+.btn {
+  font-family: "Tajawal", sans-serif !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Tajawal", sans-serif;
+}
+
+/* Main container */
+.ifix-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d7dae5;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ifix-container {
+    padding: 0 20px;
+  }
+}
+
