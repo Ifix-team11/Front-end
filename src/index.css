@@ -1,4 +1,4 @@
-/**
+/*
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
 
 * {
@@ -43,8 +43,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* width: 1126px;
-  max-width: 100%; */
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
@@ -62,7 +60,9 @@ a {
 }
 
 button {
-  font-family: inherit;}
+  font-family: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -81,16 +81,28 @@ p {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #d7dae5;
   border-radius: 8px;
 }
 
 /* Force sans-serif on inputs, buttons, and textareas */
-input, button, select, textarea, .form-control, .form-select, .btn {
+input,
+button,
+select,
+textarea,
+.form-control,
+.form-select,
+.btn {
   font-family: sans-serif !important;
 }
-**/
+*/
+
+/* ========================================================= */
+/* Current CSS - main */
+/* ========================================================= */
+
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
 @import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
