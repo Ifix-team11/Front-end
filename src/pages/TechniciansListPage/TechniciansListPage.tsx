@@ -9,7 +9,7 @@ import styles from "./TechniciansListPage.module.css";
 const TechniciansListPage = () => {
   return (
     <div className={styles.page}>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className={`ifix-container ${styles.content}`}>
         <div className={styles.breadcrumb}>
@@ -25,7 +25,7 @@ const TechniciansListPage = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
