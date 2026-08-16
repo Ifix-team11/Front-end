@@ -126,6 +126,7 @@
 // export default App;
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 // Pages
 import Register from "./pages/Register/Register";
@@ -165,7 +166,34 @@ function Layout() {
   );
 }
 
+function AuthLayout() {
+  return (
+    <main>
+      <Outlet />
+    </main>
+  );
+}
+
 const router = createBrowserRouter([
+{
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+    ],
+  },
+
+
   {
     element: <Layout />,
     children: [
@@ -184,20 +212,7 @@ const router = createBrowserRouter([
         ),
       },
 
-      // Authentication
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/forgot-password",
-        element: <ForgotPassword />,
-      },
-
+      
       // Store
       {
         path: "/store",
@@ -272,7 +287,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Toaster />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

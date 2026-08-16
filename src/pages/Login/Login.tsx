@@ -1,31 +1,57 @@
 import { useState } from "react";
-import type { FormEvent } from "react";
 import photo from "../../assets/Group 15 (1).png";
 import logo from "../../assets/image 3.png";
 import styles from "./Login.module.css";
 import { Image as ImageIcon, Eye, EyeOff } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import toast from "react-hot-toast";
+import { login as loginService } from "../../Services/auth.service";
+import { useAuth } from "../../context/AuthContext";
 
 function Login() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
+    const formik = useFormik({
+        initialValues: {
+            phone: "",
+            phoneCountryCode: "+20",
+            password: "",
+            rememberMe: false,
+        },
+        validationSchema: Yup.object({
+            phone: Yup.string().required("رقم الهاتف مطلوب"),
+            password: Yup.string().required("كلمة المرور مطلوبة"),
+        }),
+        onSubmit: async (values, { setSubmitting }) => {
+            try {
+                const response = await loginService({
+                    phone: `${values.phoneCountryCode}${values.phone}`,
+                    password: values.password,
+                });
+                console.log("User Login Data:", response);
 
-        if (!username || !password) {
-            alert("يرجى ملء جميع الحقول المطلوبة");
-            return;
-        }
+                const token = response?.token;
+                if (token) {
+                    login(token);
+                }
 
-        console.log("User Login Data:", {
-            username,
-            password,
-            rememberMe,
-        });
-        alert("تم تسجيل الدخول بنجاح (تجريبي)!");
-    };
+                toast.success("تم تسجيل الدخول بنجاح!");
+                setTimeout(() => navigate("/"), 1000); // Redirect after login
+            } catch (error: any) {
+                console.error("Login error:", error);
+                const message =
+                    error?.response?.data?.message ||
+                    "حدث خطأ أثناء تسجيل الدخول";
+                toast.error(message);
+            } finally {
+                setSubmitting(false);
+            }
+        },
+    });
 
     return (
         <div className={`container-fluid p-0 ${styles.pageWrapper}`} style={{ direction: "rtl", fontFamily: "sans-serif" }}>
@@ -45,22 +71,40 @@ function Login() {
                         </div>
 
                         {/* Login Form */}
-                        <form onSubmit={handleSubmit}>
-                            {/* Username */}
+                        <form onSubmit={formik.handleSubmit}>
+                            {/* Phone */}
                             <div className="mb-3" style={{ textAlign: "right" }}>
-                                <label htmlFor="username" className="form-label fw-semibold text-dark mb-1" style={{ fontSize: "14px" }}>
-                                    اسم المستخدم <span className="text-danger">*</span>
+                                <label htmlFor="phone" className="form-label fw-semibold text-dark mb-1" style={{ fontSize: "14px" }}>
+                                    رقم الهاتف <span className="text-danger">*</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    id="username"
-                                    className="form-control border-secondary-subtle py-2 px-3"
-                                    style={{ fontSize: "15px" }}
-                                    placeholder="اسم المستخدم"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
+                                <div className="input-group">
+                                    <select
+                                        name="phoneCountryCode"
+                                        className="form-select border-secondary-subtle bg-white"
+                                        style={{ maxWidth: "110px", fontSize: "14px" }}
+                                        value={formik.values.phoneCountryCode}
+                                        onChange={formik.handleChange}
+                                    >
+                                        <option value="+20">🇪🇬 +20</option>
+                                        <option value="+966">🇸🇦 +966</option>
+                                        <option value="+971">🇦🇪 +971</option>
+                                        <option value="+965">🇰🇼 +965</option>
+                                    </select>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        className={`form-control border-secondary-subtle py-2 px-3 ${formik.touched.phone && formik.errors.phone ? "is-invalid" : ""}`}
+                                        style={{ fontSize: "15px" }}
+                                        placeholder="رقم الهاتف"
+                                        value={formik.values.phone}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                    />
+                                </div>
+                                {formik.touched.phone && formik.errors.phone && (
+                                    <div className="text-danger mt-1" style={{ fontSize: "14px" }}>{formik.errors.phone}</div>
+                                )}
                             </div>
 
                             {/* Password */}
@@ -72,12 +116,13 @@ function Login() {
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         id="password"
-                                        className="form-control border-secondary-subtle py-2 pe-3"
+                                        name="password"
+                                        className={`form-control border-secondary-subtle py-2 pe-3 ${formik.touched.password && formik.errors.password ? "is-invalid" : ""}`}
                                         style={{ fontSize: "15px", paddingLeft: "45px" }}
                                         placeholder="كلمة المرور"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        required
+                                        value={formik.values.password}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
                                     />
                                     <button
                                         type="button"
@@ -87,6 +132,9 @@ function Login() {
                                         {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                     </button>
                                 </div>
+                                {formik.touched.password && formik.errors.password && (
+                                    <div className="text-danger mt-1" style={{ fontSize: "14px" }}>{formik.errors.password}</div>
+                                )}
                             </div>
 
                             {/* Remember Me & Forgot Password */}
@@ -95,27 +143,29 @@ function Login() {
                                     <input
                                         type="checkbox"
                                         id="rememberMe"
+                                        name="rememberMe"
                                         className="form-check-input m-0"
                                         style={{ cursor: "pointer", width: "16px", height: "16px", float: "none" }}
-                                        checked={rememberMe}
-                                        onChange={(e) => setRememberMe(e.target.checked)}
+                                        checked={formik.values.rememberMe}
+                                        onChange={formik.handleChange}
                                     />
                                     <label htmlFor="rememberMe" className="form-check-label text-secondary" style={{ cursor: "pointer" }}>
                                         تذكرني
                                     </label>
                                 </div>
-                                <a href="/forgot-password" className="text-primary text-decoration-none fw-semibold">
+                                <Link to="/forgot-password" className="text-primary text-decoration-none fw-semibold">
                                     نسيت كلمة المرور؟
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm"
-                                style={{ backgroundColor: "#2b5adb", borderColor: "#2b5adb", fontSize: "16px" }}
+                                className="btn btn-primary-premium w-100 py-3 fw-bold rounded-3"
+                                style={{ fontSize: "16px" }}
+                                disabled={formik.isSubmitting}
                             >
-                                تسجيل الدخول
+                                {formik.isSubmitting ? "جاري تسجيل الدخول..." : "تسجيل الدخول"}
                             </button>
                         </form>
 
@@ -127,13 +177,13 @@ function Login() {
                         </div>
 
                         {/* Register Button */}
-                        <a
-                            href="/register"
-                            className="btn btn-outline-secondary w-100 py-2.5 fw-semibold border-secondary-subtle text-secondary rounded-3 mb-5"
+                        <Link
+                            to="/register"
+                            className="btn btn-outline-premium w-100 py-2.5 fw-semibold rounded-3 mb-5 text-decoration-none d-block text-center"
                             style={{ fontSize: "15px" }}
                         >
                             إنشاء حساب
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

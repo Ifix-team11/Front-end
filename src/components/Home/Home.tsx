@@ -8,8 +8,10 @@ import userGroup from "../../assets/SVG/user-group.svg";
 import money from "../../assets/SVG/money-04.svg";
 import repair from "../../assets/SVG/repair.svg";
 import searchIcon from "../../assets/SVG/Searsh-icon.svg";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  let navigator = useNavigate();
   return (
     <section className="hero">
       <div className="container hero-container">
@@ -30,8 +32,8 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <Button text="تسجيل دخول" />
-            <Button text="إنشاء حساب" variant="secondary" />
+            <Button text="تسجيل دخول" onClick={()=> navigator('/login')}/>
+            <Button text="إنشاء حساب" variant="secondary" onClick={()=>navigator('/register')}/>
           </div>
 
           <div className="hero-features">
