@@ -69,7 +69,7 @@ function Navbar() {
                 <div className="services-dropdown-menu">
                   {/* Electricity */}
                   <Link
-                    to="/services/electricity"
+                    to="/electricity"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
@@ -81,7 +81,7 @@ function Navbar() {
 
                   {/* Plumbing */}
                   <Link
-                    to="/services/plumbing"
+                    to="/plumbing"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
@@ -93,7 +93,7 @@ function Navbar() {
 
                   {/* Carpentry */}
                   <Link
-                    to="/services/carpentry"
+                    to="/carpentry"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
@@ -105,7 +105,7 @@ function Navbar() {
 
                   {/* Painting */}
                   <Link
-                    to="/services/painting"
+                    to="/painting"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
@@ -117,7 +117,7 @@ function Navbar() {
 
                   {/* Appliances */}
                   <Link
-                    to="/services/appliances"
+                    to="/appliances"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
@@ -129,7 +129,7 @@ function Navbar() {
 
                   {/* Pest Control */}
                   <Link
-                    to="/services/pest-control"
+                    to="/pestcontrol"
                     className="service-dropdown-item"
                     onClick={() => setServicesOpen(false)}
                   >
