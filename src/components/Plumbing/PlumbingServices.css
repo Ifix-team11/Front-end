@@ -1,0 +1,1352 @@
+/* =====================================================
+   PLUMBING SERVICES PAGE
+   All classes are prefixed with "plumbing-"
+   to prevent CSS conflicts.
+===================================================== */
+
+.plumbing-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: "Cairo", sans-serif;
+  box-sizing: border-box;
+}
+
+.plumbing-page *,
+.plumbing-page *::before,
+.plumbing-page *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.plumbing-breadcrumb {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.plumbing-breadcrumb-current {
+  color: #64748b;
+}
+
+.plumbing-breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.plumbing-breadcrumb-active {
+  color: #3060e4;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.plumbing-hero {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.plumbing-hero-pattern {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+  height: 200px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 0 0 14px 14px;
+
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+}
+
+.plumbing-hero-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.plumbing-title-wrapper {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.plumbing-title-wrapper h1 {
+  margin: 0;
+
+  color: #172333;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HERO ARROW
+===================================================== */
+
+.plumbing-arrow {
+  position: absolute;
+
+  left: -48px;
+  bottom: -4px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.plumbing-arrow img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.plumbing-hero-content p {
+  margin: 2px 0 0;
+
+  color: #40516a;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TECHNICIANS SECTION
+===================================================== */
+
+.plumbing-technicians {
+  width: 100%;
+
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.plumbing-technicians-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.plumbing-technicians-header {
+  width: 100%;
+
+  text-align: right;
+
+  margin-bottom: 25px;
+}
+
+.plumbing-technicians-header h2 {
+  margin: 0 0 5px;
+
+  color: #172333;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.plumbing-technicians-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.plumbing-filters {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  direction: rtl;
+}
+
+.plumbing-filter-wrapper {
+  min-width: 0;
+}
+
+.plumbing-filter-box {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.plumbing-filter {
+  width: 100%;
+  height: 34px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #d4d9df;
+
+  border-radius: 20px;
+
+  color: #303942;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+.plumbing-filter:hover {
+  border-color: #3569e8;
+  background: #fafcff;
+}
+
+.plumbing-filter:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.25);
+  outline-offset: 2px;
+}
+
+.plumbing-filter:active {
+  transform: scale(0.99);
+}
+
+.plumbing-filter > span:last-child {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.plumbing-filter img {
+  width: 8px;
+  height: 5px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.plumbing-arrow-open img {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.plumbing-filter-dropdown {
+  position: absolute;
+
+  top: calc(100% + 7px);
+  right: 0;
+
+  width: 100%;
+  min-width: 140px;
+
+  padding: 5px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e6eb;
+
+  border-radius: 9px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+  z-index: 1000;
+
+  animation: plumbingFilterDropdown 0.15s ease;
+}
+
+@keyframes plumbingFilterDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   DROPDOWN OPTIONS
+===================================================== */
+
+.plumbing-filter-option {
+  width: 100%;
+
+  display: block;
+
+  padding: 8px 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.plumbing-filter-option:hover {
+  background: #f2f5ff;
+  color: #3569e8;
+}
+
+.plumbing-filter-option:focus-visible {
+  outline: none;
+
+  background: #f2f5ff;
+  color: #3569e8;
+}
+
+.plumbing-filter-option-selected {
+  background: #eef3ff;
+  color: #3569e8;
+  font-weight: 600;
+}
+
+/* =====================================================
+   ACTIVE FILTERS
+===================================================== */
+
+.plumbing-active-filters {
+  width: 100%;
+
+  min-height: 30px;
+
+  margin-top: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  direction: rtl;
+
+  justify-content: flex-start;
+}
+
+/* =====================================================
+   ACTIVE FILTER LABEL
+===================================================== */
+
+.plumbing-filter-label {
+  min-height: 25px;
+
+  padding: 3px 8px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  background: #f5f7fa;
+
+  border: 1px solid #e1e4e9;
+
+  border-radius: 5px;
+
+  color: #626b75;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.plumbing-filter-label strong {
+  color: #30353b;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   REMOVE FILTER
+===================================================== */
+
+.plumbing-filter-label button {
+  width: 14px;
+  height: 14px;
+
+  padding: 0;
+  margin: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #53606d;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.plumbing-filter-label button:hover {
+  color: #e53935;
+}
+
+.plumbing-filter-label button:focus-visible {
+  outline: none;
+  color: #e53935;
+}
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.plumbing-clear-filters {
+  height: 25px;
+
+  padding: 0 4px;
+
+  margin: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  box-shadow: none;
+
+  white-space: nowrap;
+}
+
+.plumbing-clear-filters:hover {
+  color: #3569e8;
+}
+
+.plumbing-clear-filters:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.25);
+  outline-offset: 2px;
+}
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.plumbing-empty-state {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  padding: 50px 20px;
+
+  text-align: center;
+
+  border: 1px dashed #d9dee7;
+
+  border-radius: 14px;
+
+  background: #fafcff;
+}
+
+.plumbing-empty-state h3 {
+  margin: 0 0 8px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.plumbing-empty-state p {
+  margin: 0 0 18px;
+
+  color: #64748b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.plumbing-empty-button {
+  height: 34px;
+
+  padding: 0 16px;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  background: #3569e8;
+
+  color: #ffffff;
+
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.plumbing-empty-button:hover {
+  background: #2857cc;
+
+  border-color: #2857cc;
+}
+
+.plumbing-empty-button:active {
+  transform: scale(0.98);
+}
+
+.plumbing-empty-button:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.3);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   RESULTS HEADER
+===================================================== */
+
+.plumbing-results-header {
+  width: 100%;
+
+  margin-top: 22px;
+
+  direction: rtl;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+}
+
+.plumbing-results-header strong {
+  color: #3060e4;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   TECHNICIANS GRID
+===================================================== */
+
+.plumbing-technicians-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top: 14px;
+}
+
+/* =====================================================
+   TECHNICIAN CARD
+===================================================== */
+
+.plumbing-technician-card {
+  width: 100%;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.plumbing-technician-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.plumbing-card-top {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.plumbing-technician-info {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =====================================================
+   TECHNICIAN IMAGE
+===================================================== */
+
+.plumbing-image-wrapper {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+}
+
+.plumbing-image-wrapper img {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* Online */
+
+.plumbing-online-dot {
+  position: absolute;
+
+  right: 2px;
+  bottom: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #20c997;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+}
+
+/* =====================================================
+   TECHNICIAN TEXT
+===================================================== */
+
+.plumbing-technician-text {
+  min-width: 0;
+}
+
+.plumbing-technician-text h3 {
+  margin: 0 0 4px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+.plumbing-technician-text p {
+  margin: 0 0 6px;
+
+  color: #3060e4;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TECHNICIAN META
+===================================================== */
+
+.plumbing-technician-meta {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.plumbing-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.plumbing-star {
+  color: #ffc400;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   CARD DIVIDER
+===================================================== */
+
+.plumbing-card-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #edf0f3;
+}
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.plumbing-card-bottom {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.plumbing-price {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  white-space: nowrap;
+}
+
+.plumbing-price-label {
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+}
+
+.plumbing-price-value {
+  color: #3060e4;
+
+  font-family: "Tajawal", sans-serif;
+
+  font-size: 25px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 120%;
+}
+
+.plumbing-price-currency {
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+}
+
+/* =====================================================
+   CARD BUTTONS
+===================================================== */
+
+.plumbing-technician-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* Profile */
+
+.plumbing-profile-btn {
+  height: 32px;
+
+  padding: 0 11px;
+
+  background: #ffffff;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #3569e8;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.plumbing-profile-btn:hover {
+  background: #f2f5ff;
+}
+
+.plumbing-profile-btn:active {
+  transform: scale(0.98);
+}
+
+.plumbing-profile-btn:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.3);
+  outline-offset: 2px;
+}
+
+/* Book */
+
+.plumbing-book-btn {
+  height: 32px;
+
+  padding: 0 13px;
+
+  background: #3569e8;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.plumbing-book-btn:hover {
+  background: #2857cc;
+  border-color: #2857cc;
+}
+
+.plumbing-book-btn:active {
+  transform: scale(0.98);
+}
+
+.plumbing-book-btn:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.3);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .plumbing-breadcrumb {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+
+  .plumbing-hero-pattern {
+    height: 190px;
+  }
+
+  .plumbing-title-wrapper h1 {
+    font-size: 26px;
+  }
+
+  .plumbing-hero-content p {
+    font-size: 16px;
+  }
+
+  .plumbing-arrow {
+    left: -42px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Filters */
+
+  .plumbing-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .plumbing-filter {
+    height: 38px;
+
+    font-size: 11px;
+  }
+
+  /* Cards */
+
+  .plumbing-technicians-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .plumbing-breadcrumb {
+    padding: 18px 15px 25px;
+
+    font-size: 12px;
+  }
+
+  .plumbing-hero {
+    padding: 0 12px;
+  }
+
+  .plumbing-hero-pattern {
+    height: 180px;
+
+    border-radius: 0 0 12px 12px;
+  }
+
+  .plumbing-title-wrapper h1 {
+    font-size: 23px;
+  }
+
+  .plumbing-hero-content p {
+    font-size: 14px;
+
+    padding: 0 15px;
+  }
+
+  .plumbing-arrow {
+    left: -38px;
+    bottom: -3px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Technicians */
+
+  .plumbing-technicians {
+    margin-top: 45px;
+  }
+
+  .plumbing-technicians-container {
+    padding: 0 15px;
+  }
+
+  .plumbing-technicians-header {
+    text-align: center;
+  }
+
+  .plumbing-technicians-header h2 {
+    font-size: 18px;
+  }
+
+  .plumbing-technicians-header p {
+    font-size: 11px;
+  }
+
+  /* Filters */
+
+  .plumbing-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 20px;
+  }
+
+  .plumbing-filter {
+    height: 38px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+
+  .plumbing-filter-dropdown {
+    min-width: 130px;
+  }
+
+  /* Active */
+
+  .plumbing-active-filters {
+    margin-top: 12px;
+
+    gap: 5px;
+  }
+
+  .plumbing-filter-label {
+    font-size: 8px;
+  }
+
+  .plumbing-clear-filters {
+    font-size: 8px;
+  }
+
+  /* Cards */
+
+  .plumbing-technicians-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .plumbing-technician-card {
+    padding: 14px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .plumbing-breadcrumb {
+    padding: 15px 12px 20px;
+
+    font-size: 11px;
+  }
+
+  .plumbing-hero {
+    padding: 0 10px;
+  }
+
+  .plumbing-hero-pattern {
+    height: 165px;
+  }
+
+  .plumbing-title-wrapper h1 {
+    font-size: 21px;
+  }
+
+  .plumbing-hero-content p {
+    font-size: 12px;
+  }
+
+  .plumbing-arrow {
+    left: -34px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .plumbing-technicians {
+    margin-top: 35px;
+  }
+
+  .plumbing-technicians-container {
+    padding: 0 12px;
+  }
+
+  /* Filters */
+
+  .plumbing-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .plumbing-filter {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+  }
+
+  .plumbing-filter img {
+    width: 7px;
+    height: 5px;
+  }
+
+  .plumbing-filter-dropdown {
+    min-width: 120px;
+  }
+
+  .plumbing-filter-option {
+    padding: 7px 9px;
+
+    font-size: 10px;
+  }
+
+  /* Active Filters */
+
+  .plumbing-filter-label {
+    min-height: 23px;
+
+    padding: 3px 6px;
+
+    font-size: 7px;
+  }
+
+  .plumbing-filter-label button {
+    width: 12px;
+    height: 12px;
+
+    font-size: 10px;
+  }
+
+  .plumbing-clear-filters {
+    font-size: 8px;
+  }
+
+  /* Results */
+
+  .plumbing-results-header {
+    font-size: 10px;
+  }
+
+  /* Cards */
+
+  .plumbing-technician-card {
+    padding: 12px;
+
+    border-radius: 12px;
+  }
+
+  .plumbing-image-wrapper,
+  .plumbing-image-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .plumbing-technician-text h3 {
+    font-size: 14px;
+  }
+
+  .plumbing-technician-text p {
+    font-size: 9px;
+  }
+
+  .plumbing-technician-meta {
+    font-size: 8px;
+  }
+
+  .plumbing-rating {
+    font-size: 10px;
+  }
+
+  .plumbing-star {
+    font-size: 12px;
+  }
+
+  .plumbing-card-bottom {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .plumbing-price {
+    justify-content: flex-start;
+  }
+
+  .plumbing-technician-buttons {
+    width: 100%;
+  }
+
+  .plumbing-profile-btn,
+  .plumbing-book-btn {
+    flex: 1;
+
+    padding: 0 8px;
+  }
+}

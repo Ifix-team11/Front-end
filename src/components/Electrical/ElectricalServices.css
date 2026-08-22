@@ -1,0 +1,1166 @@
+/* =====================================================
+   ELECTRICAL SERVICES
+===================================================== */
+
+.electrical-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.electrical-page *,
+.electrical-page *::before,
+.electrical-page *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.electrical-page .electrical-breadcrumb {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.electrical-page .electrical-breadcrumb-current {
+  color: #64748b;
+}
+
+.electrical-page .electrical-breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.electrical-page .electrical-breadcrumb-active {
+  color: #3060e4;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.electrical-page .electrical-hero {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.electrical-page .electrical-hero-pattern {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+  height: 200px;
+
+  margin: 0 auto;
+  overflow: hidden;
+
+  border-radius: 0 0 14px 14px;
+
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+}
+
+.electrical-page .electrical-hero-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.electrical-page .electrical-title-wrapper {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.electrical-page .electrical-title-wrapper h1 {
+  margin: 0;
+
+  color: #172333;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HERO ARROW
+===================================================== */
+
+.electrical-page .electrical-arrow {
+  position: absolute;
+
+  left: -48px;
+  bottom: -4px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.electrical-page .electrical-arrow img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.electrical-page .electrical-hero-content p {
+  margin: 2px 0 0;
+
+  color: #40516a;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TECHNICIANS SECTION
+===================================================== */
+
+.electrical-page .electrical-technicians {
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.electrical-page .electrical-technicians-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.electrical-page .electrical-technicians-header {
+  width: 100%;
+  margin-bottom: 25px;
+
+  text-align: right;
+}
+
+.electrical-page .electrical-technicians-header h2 {
+  margin: 0 0 5px;
+
+  color: #172333;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.electrical-page .electrical-technicians-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.electrical-page .electrical-filters {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  direction: rtl;
+}
+
+.electrical-page .electrical-filter-wrapper {
+  position: relative;
+  min-width: 0;
+}
+
+.electrical-page .electrical-filter-box {
+  position: relative;
+  width: 100%;
+}
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.electrical-page .electrical-filter {
+  width: 100%;
+  height: 34px;
+
+  margin: 0;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  border: 1px solid #d4d9df;
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  color: #303942;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.electrical-page .electrical-filter:hover {
+  border-color: #3569e8;
+  background: #fafcff;
+}
+
+.electrical-page .electrical-filter-open {
+  border-color: #3569e8;
+  background: #fafcff;
+}
+
+.electrical-page .electrical-filter:active {
+  transform: scale(0.99);
+}
+
+/* =====================================================
+   FILTER ARROW
+===================================================== */
+
+.electrical-page .electrical-filter-arrow {
+  width: 12px;
+  height: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.electrical-page .electrical-filter-arrow img {
+  width: 8px;
+  height: 5px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.electrical-page .electrical-filter-open .electrical-filter-arrow img {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   FILTER DROPDOWN
+===================================================== */
+
+.electrical-page .electrical-filter-dropdown {
+  position: absolute;
+
+  top: calc(100% + 7px);
+  right: 0;
+
+  width: 100%;
+  min-width: 140px;
+
+  padding: 5px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e6eb;
+  border-radius: 9px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+  z-index: 1000;
+
+  animation: electricalFilterDropdown 0.15s ease;
+}
+
+@keyframes electricalFilterDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   FILTER OPTION
+===================================================== */
+
+.electrical-page .electrical-filter-option {
+  width: 100%;
+
+  margin: 0;
+  padding: 8px 12px;
+
+  display: block;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.electrical-page .electrical-filter-option:hover {
+  background: #f2f5ff;
+  color: #3569e8;
+}
+
+.electrical-page .electrical-filter-option-selected {
+  background: #eef3ff;
+  color: #3569e8;
+  font-weight: 600;
+}
+
+/* =====================================================
+   ACTIVE FILTERS
+===================================================== */
+
+.electrical-page .electrical-active-filters {
+  width: 100%;
+  min-height: 30px;
+
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  direction: rtl;
+  justify-content: flex-start;
+}
+
+/* =====================================================
+   ACTIVE FILTER LABEL
+===================================================== */
+
+.electrical-page .electrical-filter-label {
+  min-height: 25px;
+
+  padding: 3px 8px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  background: #f5f7fa;
+
+  border: 1px solid #e1e4e9;
+  border-radius: 5px;
+
+  color: #626b75;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 8px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.electrical-page .electrical-filter-label strong {
+  color: #30353b;
+  font-weight: 600;
+}
+
+/* =====================================================
+   REMOVE ACTIVE FILTER
+===================================================== */
+
+.electrical-page .electrical-filter-label button {
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+
+  color: #53606d;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.electrical-page .electrical-filter-label button:hover {
+  color: #e53935;
+}
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.electrical-page .electrical-clear-filters {
+  height: 25px;
+
+  margin: 0;
+  padding: 0 4px;
+
+  border: 0;
+  background: transparent;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 9px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.electrical-page .electrical-clear-filters:hover {
+  color: #3569e8;
+}
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.electrical-page .electrical-results-header {
+  width: 100%;
+
+  margin-top: 22px;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 11px;
+
+  direction: rtl;
+}
+
+.electrical-page .electrical-results-header strong {
+  color: #3060e4;
+  font-weight: 600;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.electrical-page .electrical-technicians-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 14px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.electrical-page .electrical-technician-card {
+  width: 100%;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.electrical-page .electrical-technician-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.electrical-page .electrical-card-top {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.electrical-page .electrical-technician-info {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.electrical-page .electrical-image-wrapper {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+}
+
+.electrical-page .electrical-image-wrapper img {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.electrical-page .electrical-online-dot {
+  position: absolute;
+
+  right: 2px;
+  bottom: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #20c997;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+}
+
+/* =====================================================
+   TECHNICIAN TEXT
+===================================================== */
+
+.electrical-page .electrical-technician-text {
+  min-width: 0;
+}
+
+.electrical-page .electrical-technician-text h3 {
+  margin: 0 0 4px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+.electrical-page .electrical-technician-text p {
+  margin: 0 0 7px;
+
+  color: #3060e4;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   META
+===================================================== */
+
+.electrical-page .electrical-technician-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.electrical-page .electrical-rating {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.electrical-page .electrical-star {
+  color: #ffc400;
+  font-size: 14px;
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.electrical-page .electrical-card-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #edf0f3;
+}
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.electrical-page .electrical-card-bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.electrical-page .electrical-price {
+  display: flex;
+  align-items: baseline;
+
+  gap: 3px;
+
+  white-space: nowrap;
+}
+
+.electrical-page .electrical-price-label {
+  color: #7b8490;
+  font-family: "Cairo", sans-serif;
+  font-size: 9px;
+}
+
+.electrical-page .electrical-price-value {
+  color: #3060e4;
+
+  font-family: "Tajawal", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 120%;
+}
+
+.electrical-page .electrical-price-currency {
+  color: #7b8490;
+  font-family: "Cairo", sans-serif;
+  font-size: 9px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.electrical-page .electrical-technician-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* Both Link buttons */
+
+.electrical-page .electrical-profile-btn,
+.electrical-page .electrical-book-btn {
+  min-height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 11px;
+
+  border-radius: 7px;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Profile */
+
+.electrical-page .electrical-profile-btn {
+  background: #ffffff;
+
+  border: 1px solid #3569e8;
+
+  color: #3569e8;
+}
+
+.electrical-page .electrical-profile-btn:hover {
+  background: #f2f5ff;
+  color: #2857cc;
+}
+
+/* Booking */
+
+.electrical-page .electrical-book-btn {
+  background: #3569e8;
+
+  border: 1px solid #3569e8;
+
+  color: #ffffff;
+}
+
+.electrical-page .electrical-book-btn:hover {
+  background: #2857cc;
+  border-color: #2857cc;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.electrical-page .electrical-empty-state {
+  grid-column: 1 / -1;
+
+  padding: 50px 20px;
+
+  text-align: center;
+
+  border: 1px dashed #d9dee7;
+  border-radius: 14px;
+
+  background: #fafcff;
+}
+
+.electrical-page .electrical-empty-state h3 {
+  margin: 0 0 8px;
+
+  color: #172333;
+
+  font-size: 18px;
+}
+
+.electrical-page .electrical-empty-state p {
+  margin: 0 0 18px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.electrical-page .electrical-empty-button {
+  height: 34px;
+
+  padding: 0 16px;
+
+  border: 1px solid #3569e8;
+  border-radius: 7px;
+
+  background: #3569e8;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .electrical-page .electrical-breadcrumb {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+
+  .electrical-page .electrical-hero-pattern {
+    height: 190px;
+  }
+
+  .electrical-page .electrical-title-wrapper h1 {
+    font-size: 26px;
+  }
+
+  .electrical-page .electrical-hero-content p {
+    font-size: 16px;
+  }
+
+  .electrical-page .electrical-arrow {
+    left: -42px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .electrical-page .electrical-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .electrical-page .electrical-filter {
+    height: 38px;
+  }
+
+  .electrical-page .electrical-technicians-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .electrical-page .electrical-breadcrumb {
+    padding: 18px 15px 25px;
+    font-size: 12px;
+  }
+
+  .electrical-page .electrical-hero {
+    padding: 0 12px;
+  }
+
+  .electrical-page .electrical-hero-pattern {
+    height: 180px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .electrical-page .electrical-title-wrapper h1 {
+    font-size: 23px;
+  }
+
+  .electrical-page .electrical-hero-content p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .electrical-page .electrical-arrow {
+    left: -38px;
+    bottom: -3px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  .electrical-page .electrical-technicians {
+    margin-top: 45px;
+    padding: 0 15px;
+  }
+
+  .electrical-page .electrical-technicians-header {
+    text-align: center;
+  }
+
+  .electrical-page .electrical-technicians-header h2 {
+    font-size: 18px;
+  }
+
+  .electrical-page .electrical-technicians-header p {
+    font-size: 11px;
+  }
+
+  .electrical-page .electrical-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 20px;
+  }
+
+  .electrical-page .electrical-filter {
+    height: 38px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+
+  .electrical-page .electrical-filter-dropdown {
+    min-width: 130px;
+  }
+
+  .electrical-page .electrical-active-filters {
+    margin-top: 12px;
+    gap: 5px;
+  }
+
+  .electrical-page .electrical-technician-card {
+    padding: 14px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .electrical-page .electrical-breadcrumb {
+    padding: 15px 12px 20px;
+    font-size: 11px;
+  }
+
+  .electrical-page .electrical-hero {
+    padding: 0 10px;
+  }
+
+  .electrical-page .electrical-hero-pattern {
+    height: 165px;
+  }
+
+  .electrical-page .electrical-title-wrapper h1 {
+    font-size: 21px;
+  }
+
+  .electrical-page .electrical-hero-content p {
+    font-size: 12px;
+  }
+
+  .electrical-page .electrical-arrow {
+    left: -34px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .electrical-page .electrical-technicians {
+    margin-top: 35px;
+    padding: 0 12px;
+  }
+
+  .electrical-page .electrical-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .electrical-page .electrical-filter {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+  }
+
+  .electrical-page .electrical-filter-arrow img {
+    width: 7px;
+    height: 5px;
+  }
+
+  .electrical-page .electrical-filter-dropdown {
+    min-width: 120px;
+  }
+
+  .electrical-page .electrical-filter-option {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .electrical-page .electrical-filter-label {
+    min-height: 23px;
+
+    padding: 3px 6px;
+
+    font-size: 7px;
+  }
+
+  .electrical-page .electrical-filter-label button {
+    width: 12px;
+    height: 12px;
+
+    font-size: 10px;
+  }
+
+  .electrical-page .electrical-clear-filters {
+    font-size: 8px;
+  }
+
+  .electrical-page .electrical-results-header {
+    font-size: 10px;
+  }
+
+  .electrical-page .electrical-technicians-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .electrical-page .electrical-technician-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .electrical-page .electrical-image-wrapper,
+  .electrical-page .electrical-image-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .electrical-page .electrical-technician-text h3 {
+    font-size: 12px;
+  }
+
+  .electrical-page .electrical-technician-text p {
+    font-size: 9px;
+  }
+
+  .electrical-page .electrical-technician-meta {
+    font-size: 8px;
+  }
+
+  .electrical-page .electrical-rating {
+    font-size: 10px;
+  }
+
+  .electrical-page .electrical-star {
+    font-size: 12px;
+  }
+
+  .electrical-page .electrical-card-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .electrical-page .electrical-price {
+    justify-content: flex-start;
+  }
+
+  .electrical-page .electrical-technician-buttons {
+    width: 100%;
+  }
+
+  .electrical-page .electrical-profile-btn,
+  .electrical-page .electrical-book-btn {
+    flex: 1;
+    padding: 0 8px;
+  }
+}
