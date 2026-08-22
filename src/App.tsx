@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
@@ -44,26 +45,25 @@ function AuthLayout() {
 }
 
 const router = createBrowserRouter([
-  // Authentication
-  {
+{
     element: <AuthLayout />,
     children: [
       {
-        path: "/login",
-        element: <div>Login</div>,
+        path: "/register",
+        element: <Register />,
       },
       {
-        path: "/register",
-        element: <div>Register</div>,
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/forgot-password",
-        element: <div>Forgot Password</div>,
+        element: <ForgotPassword />,
       },
     ],
   },
 
-  // Main Website
+
   {
     element: <Layout />,
     children: [

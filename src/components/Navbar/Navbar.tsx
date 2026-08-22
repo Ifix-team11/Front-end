@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
 import Button from "../Button/Button";
@@ -15,6 +15,7 @@ import bugIcon from "../../assets/SVG/Frame-Bug.svg";
 
 function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
+  let navigator = useNavigate();
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -173,8 +174,8 @@ function Navbar() {
 
           {/* Auth Buttons */}
           <div className="auth-buttons">
-            <Button text="تسجيل دخول" variant="primary" />
-            <Button text="إنشاء حساب" variant="secondary" />
+            <Button text="تسجيل دخول" variant="primary" onClick={()=> navigator('/login')}/>
+            <Button text="إنشاء حساب" variant="secondary" onClick={()=> navigator('/register')} />
           </div>
         </div>
       </div>
