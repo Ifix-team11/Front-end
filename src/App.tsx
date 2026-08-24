@@ -1,14 +1,30 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+
 import "./App.css";
 //import { Toaster } from "react-hot-toast";
+
+
+// Pages
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+
+// import TechniciansListPage from "./pages/TechniciansListPage/TechniciansListPage";
+// import TechnicianDetailPage from "./pages/TechnicianDetailPage/TechnicianDetailPage";
+
+// import CentersListPage from "./pages/CentersListPage/CentersListPage";
+// import CenterDetailPage from "./pages/CenterDetailPage/CenterDetailPage";
+import ContactUs from "./pages/ContactUs/ContactUs";
+import Partners from "./pages/Partners/Partners";
+
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
-import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+// import Register from "./pages/Register/Register";
+// import Login from "./pages/Login/Login";
+// import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
 import TechniciansSection from "./components/TechniciansSection/TechniciansSection";
@@ -125,13 +141,13 @@ const router = createBrowserRouter([
       // Partners
       {
         path: "/partners",
-        element: <div>كن شريكنا</div>,
+        element: <Partners />,
       },
 
       // Contact
       {
         path: "/contact",
-        element: <div>تواصل معنا</div>,
+        element: <ContactUs />,
       },
 
       // Not Found
