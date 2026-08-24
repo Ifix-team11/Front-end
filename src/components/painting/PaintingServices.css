@@ -1,0 +1,1287 @@
+/* =====================================================
+   PAINTING SERVICES PAGE
+===================================================== */
+
+.painting-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.painting-page *,
+.painting-page *::before,
+.painting-page *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.painting-breadcrumb {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.painting-breadcrumb a {
+  text-decoration: none;
+}
+
+.painting-breadcrumb-current {
+  color: #64748b;
+}
+
+.painting-breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.painting-breadcrumb-active {
+  color: #3060e4;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.painting-hero {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.painting-hero-pattern {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+  height: 200px;
+
+  margin: 0 auto;
+  overflow: hidden;
+
+  border-radius: 0 0 14px 14px;
+
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+}
+
+.painting-hero-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.painting-title-wrapper {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.painting-title-wrapper h1 {
+  margin: 0;
+
+  color: #172333;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HERO ARROW
+===================================================== */
+
+.painting-arrow {
+  position: absolute;
+
+  left: -48px;
+  bottom: -4px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.painting-arrow img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.painting-hero-content p {
+  margin: 2px 0 0;
+
+  color: #40516a;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TECHNICIANS SECTION
+===================================================== */
+
+.painting-technicians {
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.painting-technicians-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.painting-technicians-header {
+  width: 100%;
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.painting-technicians-header h2 {
+  margin: 0 0 5px;
+
+  color: #172333;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.painting-technicians-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.painting-filters {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  direction: rtl;
+}
+
+.painting-filter-wrapper {
+  min-width: 0;
+}
+
+.painting-filter-box {
+  position: relative;
+  width: 100%;
+}
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.painting-filter {
+  width: 100%;
+  height: 34px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #d4d9df;
+  border-radius: 20px;
+
+  color: #303942;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.painting-filter:hover {
+  border-color: #3569e8;
+  background: #fafcff;
+}
+
+.painting-filter:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.25);
+  outline-offset: 2px;
+}
+
+.painting-filter:active {
+  transform: scale(0.99);
+}
+
+.painting-filter > span:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.painting-filter img {
+  width: 8px;
+  height: 5px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.painting-arrow-open img {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.painting-filter-dropdown {
+  position: absolute;
+
+  top: calc(100% + 7px);
+  right: 0;
+
+  width: 100%;
+  min-width: 150px;
+
+  padding: 5px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e6eb;
+  border-radius: 9px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+  z-index: 1000;
+
+  animation: paintingDropdownAnimation 0.15s ease;
+}
+
+@keyframes paintingDropdownAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   DROPDOWN OPTION
+===================================================== */
+
+.painting-filter-option {
+  width: 100%;
+
+  display: block;
+
+  padding: 8px 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.painting-filter-option:hover {
+  background: #f2f5ff;
+  color: #3569e8;
+}
+
+.painting-filter-option.selected {
+  background: #eef3ff;
+  color: #3569e8;
+  font-weight: 600;
+}
+
+/* =====================================================
+   ACTIVE FILTERS
+===================================================== */
+
+.painting-active-filters {
+  width: 100%;
+
+  min-height: 30px;
+
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  direction: rtl;
+
+  justify-content: flex-start;
+}
+
+/* =====================================================
+   ACTIVE FILTER LABEL
+===================================================== */
+
+.painting-filter-label {
+  min-height: 25px;
+
+  padding: 3px 8px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  background: #f5f7fa;
+
+  border: 1px solid #e1e4e9;
+
+  border-radius: 5px;
+
+  color: #626b75;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.painting-filter-label strong {
+  color: #30353b;
+  font-weight: 600;
+}
+
+/* =====================================================
+   REMOVE FILTER
+===================================================== */
+
+.painting-filter-label button {
+  width: 14px;
+  height: 14px;
+
+  padding: 0;
+  margin: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #53606d;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.painting-filter-label button:hover {
+  color: #e53935;
+}
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.painting-clear-filters {
+  height: 25px;
+
+  padding: 0 4px;
+
+  margin: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.painting-clear-filters:hover {
+  color: #3569e8;
+}
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.painting-empty-state {
+  width: 100%;
+
+  grid-column: 1 / -1;
+
+  margin-top: 14px;
+
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px dashed #d9dee7;
+
+  border-radius: 14px;
+
+  background: #fafcff;
+}
+
+.painting-empty-state h3 {
+  margin: 0 0 8px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.painting-empty-state p {
+  max-width: 450px;
+
+  margin: 0 0 18px;
+
+  color: #64748b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+.painting-empty-button {
+  height: 34px;
+
+  padding: 0 18px;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  background: #3569e8;
+
+  color: #ffffff;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.painting-empty-button:hover {
+  background: #2857cc;
+
+  border-color: #2857cc;
+}
+
+.painting-empty-button:active {
+  transform: scale(0.98);
+}
+
+.painting-empty-button:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.3);
+
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.painting-results-header {
+  width: 100%;
+
+  margin-top: 22px;
+
+  direction: rtl;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+
+  text-align: right;
+}
+
+.painting-results-header strong {
+  color: #3060e4;
+  font-weight: 600;
+}
+
+/* =====================================================
+   TECHNICIANS GRID
+===================================================== */
+
+.painting-technicians-grid {
+  width: 100%;
+
+  margin-top: 14px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+/* =====================================================
+   TECHNICIAN CARD
+===================================================== */
+
+.painting-technician-card {
+  width: 100%;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.painting-technician-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.painting-card-top {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.painting-technician-info {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.painting-image-wrapper {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+}
+
+.painting-image-wrapper img {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.painting-online-dot {
+  position: absolute;
+
+  right: 2px;
+  bottom: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #20c997;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+}
+
+/* =====================================================
+   TECHNICIAN TEXT
+===================================================== */
+
+.painting-technician-text {
+  min-width: 0;
+}
+
+.painting-technician-text h3 {
+  margin: 0 0 2px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+.painting-technician-text p {
+  margin: 0 0 6px;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  background: var(
+    --brand_gredient,
+    linear-gradient(93deg, #3060e4 5.05%, rgba(27, 53, 126, 0.98) 113.19%)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   META
+===================================================== */
+
+.painting-technician-meta {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.painting-rating {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.painting-star {
+  color: #ffc400;
+  font-size: 14px;
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.painting-card-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #edf0f3;
+}
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.painting-card-bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.painting-price {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  white-space: nowrap;
+}
+
+.painting-price-label {
+  color: #7b8490;
+  font-size: 9px;
+}
+
+.painting-price-value {
+  color: var(--Foundation-primary-color-Normal, #3060e4);
+
+  font-family: "Tajawal", sans-serif;
+
+  font-size: 25px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 120%;
+}
+
+.painting-price-currency {
+  color: #7b8490;
+  font-size: 9px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.painting-technician-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.painting-profile-btn {
+  height: 32px;
+
+  padding: 0 11px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #3569e8;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.painting-profile-btn:hover {
+  background: #f2f5ff;
+  color: #3569e8;
+}
+
+/* =====================================================
+   BOOK BUTTON
+===================================================== */
+
+.painting-book-btn {
+  height: 32px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3569e8;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.painting-book-btn:hover {
+  background: #2857cc;
+  border-color: #2857cc;
+  color: #ffffff;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .painting-breadcrumb {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+
+  .painting-hero-pattern {
+    height: 190px;
+  }
+
+  .painting-title-wrapper h1 {
+    font-size: 26px;
+  }
+
+  .painting-hero-content p {
+    font-size: 16px;
+  }
+
+  .painting-arrow {
+    left: -42px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .painting-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .painting-filter {
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .painting-technicians-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .painting-technician-text h3 {
+    font-size: 20px;
+  }
+
+  .painting-technician-text p {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .painting-breadcrumb {
+    padding: 18px 15px 25px;
+    font-size: 12px;
+  }
+
+  .painting-hero {
+    padding: 0 12px;
+  }
+
+  .painting-hero-pattern {
+    height: 180px;
+
+    border-radius: 0 0 12px 12px;
+  }
+
+  .painting-title-wrapper h1 {
+    font-size: 23px;
+  }
+
+  .painting-hero-content p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .painting-arrow {
+    left: -38px;
+    bottom: -3px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  .painting-technicians {
+    margin-top: 45px;
+  }
+
+  .painting-technicians-container {
+    padding: 0 15px;
+  }
+
+  .painting-technicians-header {
+    text-align: center;
+  }
+
+  .painting-technicians-header h2 {
+    font-size: 18px;
+  }
+
+  .painting-technicians-header p {
+    font-size: 11px;
+  }
+
+  .painting-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 20px;
+  }
+
+  .painting-filter {
+    height: 38px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+
+  .painting-filter-dropdown {
+    min-width: 130px;
+  }
+
+  .painting-active-filters {
+    margin-top: 12px;
+    gap: 5px;
+  }
+
+  .painting-filter-label {
+    font-size: 8px;
+  }
+
+  .painting-clear-filters {
+    font-size: 8px;
+  }
+
+  .painting-technicians-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .painting-technician-card {
+    padding: 14px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .painting-breadcrumb {
+    padding: 15px 12px 20px;
+    font-size: 11px;
+  }
+
+  .painting-hero {
+    padding: 0 10px;
+  }
+
+  .painting-hero-pattern {
+    height: 165px;
+  }
+
+  .painting-title-wrapper h1 {
+    font-size: 21px;
+  }
+
+  .painting-hero-content p {
+    font-size: 12px;
+  }
+
+  .painting-arrow {
+    left: -34px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .painting-technicians {
+    margin-top: 35px;
+  }
+
+  .painting-technicians-container {
+    padding: 0 12px;
+  }
+
+  .painting-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .painting-filter {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+  }
+
+  .painting-filter img {
+    width: 7px;
+    height: 5px;
+  }
+
+  .painting-filter-dropdown {
+    min-width: 120px;
+  }
+
+  .painting-filter-option {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .painting-filter-label {
+    min-height: 23px;
+
+    padding: 3px 6px;
+
+    font-size: 7px;
+  }
+
+  .painting-filter-label button {
+    width: 12px;
+    height: 12px;
+
+    font-size: 10px;
+  }
+
+  .painting-clear-filters {
+    font-size: 8px;
+  }
+
+  .painting-results-header {
+    font-size: 10px;
+  }
+
+  .painting-technician-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .painting-image-wrapper,
+  .painting-image-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .painting-technician-text h3 {
+    font-size: 15px;
+  }
+
+  .painting-technician-text p {
+    font-size: 10px;
+  }
+
+  .painting-technician-meta {
+    font-size: 8px;
+  }
+
+  .painting-rating {
+    font-size: 10px;
+  }
+
+  .painting-star {
+    font-size: 12px;
+  }
+
+  .painting-card-bottom {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .painting-price {
+    justify-content: flex-start;
+  }
+
+  .painting-technician-buttons {
+    width: 100%;
+  }
+
+  .painting-profile-btn,
+  .painting-book-btn {
+    flex: 1;
+
+    padding: 0 8px;
+  }
+}

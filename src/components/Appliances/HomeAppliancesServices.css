@@ -1,0 +1,1278 @@
+/* =====================================================
+   HOME APPLIANCES SERVICES PAGE
+===================================================== */
+
+.home-appliances-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.home-appliances-page *,
+.home-appliances-page *::before,
+.home-appliances-page *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.home-appliances-breadcrumb {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.home-appliances-breadcrumb-current {
+  color: #64748b;
+}
+
+.home-appliances-breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.home-appliances-breadcrumb-active {
+  color: #3060e4;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.home-appliances-hero {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.home-appliances-hero-pattern {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+  height: 200px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 0 0 14px 14px;
+
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+}
+
+.home-appliances-hero-content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.home-appliances-title-wrapper {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.home-appliances-title-wrapper h1 {
+  margin: 0;
+
+  color: #172333;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HERO ARROW
+===================================================== */
+
+.home-appliances-arrow {
+  position: absolute;
+
+  left: -48px;
+  bottom: -4px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.home-appliances-arrow img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.home-appliances-hero-content p {
+  margin: 2px 0 0;
+
+  color: #40516a;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TECHNICIANS SECTION
+===================================================== */
+
+.home-appliances-technicians {
+  width: 100%;
+
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.home-appliances-technicians-container {
+  width: 100%;
+}
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.home-appliances-empty-state {
+  width: 100%;
+
+  grid-column: 1 / -1;
+
+  padding: 50px 20px;
+
+  margin-top: 14px;
+
+  text-align: center;
+
+  border: 1px dashed #d9dee7;
+
+  border-radius: 14px;
+
+  background: #fafcff;
+}
+
+.home-appliances-empty-state h3 {
+  margin: 0 0 8px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.home-appliances-empty-state p {
+  margin: 0 0 18px;
+
+  color: #64748b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.home-appliances-empty-button {
+  height: 34px;
+  padding: 0 16px;
+  border: 1px solid #3569e8;
+  border-radius: 7px;
+  background: #3569e8;
+  color: #ffffff;
+  font-family: "Cairo", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.home-appliances-empty-button:hover {
+  background: #2857cc;
+
+  border-color: #2857cc;
+}
+
+.home-appliances-empty-button:active {
+  transform: scale(0.98);
+}
+
+.home-appliances-empty-button:focus-visible {
+  outline: 2px solid rgba(53, 105, 232, 0.3);
+
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.home-appliances-technicians-header {
+  width: 100%;
+
+  margin-bottom: 25px;
+
+  text-align: right;
+}
+
+.home-appliances-technicians-header h2 {
+  margin: 0 0 5px;
+
+  color: #172333;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+.home-appliances-technicians-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.home-appliances-filters {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  direction: rtl;
+}
+
+.home-appliances-filter-wrapper {
+  min-width: 0;
+}
+
+.home-appliances-filter-box {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.home-appliances-filter {
+  width: 100%;
+  height: 34px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #d4d9df;
+
+  border-radius: 20px;
+
+  color: #303942;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-appliances-filter:hover {
+  border-color: #3569e8;
+
+  background: #fafcff;
+}
+
+.home-appliances-filter:active {
+  transform: scale(0.99);
+}
+
+.home-appliances-filter > span:last-child {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.home-appliances-filter img {
+  width: 8px;
+  height: 5px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.home-appliances-arrow-open img {
+  transform: rotate(180deg);
+}
+
+/* =====================================================
+   FILTER DROPDOWN
+===================================================== */
+
+.home-appliances-filter-dropdown {
+  position: absolute;
+
+  top: calc(100% + 7px);
+  right: 0;
+
+  width: 100%;
+  min-width: 140px;
+
+  padding: 5px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e6eb;
+
+  border-radius: 9px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+  z-index: 1000;
+
+  animation: homeAppliancesDropdown 0.15s ease;
+}
+
+@keyframes homeAppliancesDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   FILTER OPTION
+===================================================== */
+
+.home-appliances-filter-option {
+  width: 100%;
+
+  display: block;
+
+  padding: 8px 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.home-appliances-filter-option:hover {
+  background: #f2f5ff;
+
+  color: #3569e8;
+}
+
+.home-appliances-filter-option.selected {
+  background: #eef3ff;
+
+  color: #3569e8;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   ACTIVE FILTERS
+===================================================== */
+
+.home-appliances-active-filters {
+  width: 100%;
+
+  min-height: 30px;
+
+  margin-top: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  direction: rtl;
+
+  justify-content: flex-start;
+}
+
+/* =====================================================
+   ACTIVE FILTER LABEL
+===================================================== */
+
+.home-appliances-filter-label {
+  min-height: 25px;
+
+  padding: 3px 8px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  background: #f5f7fa;
+
+  border: 1px solid #e1e4e9;
+
+  border-radius: 5px;
+
+  color: #626b75;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.home-appliances-filter-label strong {
+  color: #30353b;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   REMOVE ACTIVE FILTER
+===================================================== */
+
+.home-appliances-filter-label button {
+  width: 14px;
+  height: 14px;
+
+  padding: 0;
+  margin: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #53606d;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.home-appliances-filter-label button:hover {
+  color: #e53935;
+}
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.home-appliances-clear-filters {
+  height: 25px;
+
+  padding: 0 4px;
+
+  margin: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  box-shadow: none;
+
+  white-space: nowrap;
+}
+
+.home-appliances-clear-filters:hover {
+  color: #3569e8;
+}
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.home-appliances-results-header {
+  width: 100%;
+
+  margin-top: 22px;
+
+  direction: rtl;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 11px;
+
+  text-align: right;
+}
+
+.home-appliances-results-header strong {
+  color: #3060e4;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.home-appliances-technicians-grid {
+  margin-top: 14px;
+}
+
+/* =====================================================
+   TECHNICIAN CARD
+===================================================== */
+
+.home-appliances-technician-card {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-appliances-technician-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.home-appliances-card-top {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.home-appliances-technician-info {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.home-appliances-image-wrapper {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+}
+
+.home-appliances-image-wrapper img {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.home-appliances-online-dot {
+  position: absolute;
+
+  right: 2px;
+  bottom: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #20c997;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+}
+
+/* =====================================================
+   TECHNICIAN TEXT
+===================================================== */
+
+.home-appliances-technician-text {
+  min-width: 0;
+}
+
+.home-appliances-technician-text h3 {
+  margin: 0 0 4px;
+
+  color: #172333;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.home-appliances-technician-text p {
+  margin: 0 0 5px;
+
+  color: #3060e4;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   META
+===================================================== */
+
+.home-appliances-technician-meta {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.home-appliances-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+
+  color: #30353b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.home-appliances-star {
+  color: #ffc400;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.home-appliances-card-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #edf0f3;
+}
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.home-appliances-card-bottom {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.home-appliances-price {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  white-space: nowrap;
+}
+
+.home-appliances-price-label {
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+}
+
+.home-appliances-price-value {
+  color: #3060e4;
+
+  font-family: "Tajawal", sans-serif;
+
+  font-size: 25px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 120%;
+}
+
+.home-appliances-price-currency {
+  color: #7b8490;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.home-appliances-technician-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.home-appliances-profile-btn {
+  height: 32px;
+
+  padding: 0 11px;
+
+  background: #ffffff;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #3569e8;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.home-appliances-profile-btn:hover {
+  background: #f2f5ff;
+}
+
+/* =====================================================
+   BOOK BUTTON
+===================================================== */
+
+.home-appliances-book-btn {
+  height: 32px;
+
+  padding: 0 13px;
+
+  background: #3569e8;
+
+  border: 1px solid #3569e8;
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-appliances-book-btn:hover {
+  background: #2857cc;
+
+  border-color: #2857cc;
+}
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.home-appliances-no-results {
+  width: 100%;
+
+  padding: 40px 20px;
+
+  color: #64748b;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .home-appliances-breadcrumb {
+    padding-top: 22px;
+
+    padding-bottom: 35px;
+  }
+
+  .home-appliances-hero-pattern {
+    height: 190px;
+  }
+
+  .home-appliances-title-wrapper h1 {
+    font-size: 26px;
+  }
+
+  .home-appliances-hero-content p {
+    font-size: 16px;
+  }
+
+  .home-appliances-arrow {
+    left: -42px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-appliances-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .home-appliances-filter {
+    height: 38px;
+
+    font-size: 11px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .home-appliances-breadcrumb {
+    padding: 18px 15px 25px;
+
+    font-size: 12px;
+  }
+
+  .home-appliances-hero {
+    padding: 0 12px;
+  }
+
+  .home-appliances-hero-pattern {
+    height: 180px;
+
+    border-radius: 0 0 12px 12px;
+  }
+
+  .home-appliances-title-wrapper h1 {
+    font-size: 23px;
+  }
+
+  .home-appliances-hero-content p {
+    font-size: 14px;
+
+    padding: 0 15px;
+  }
+
+  .home-appliances-arrow {
+    left: -38px;
+
+    bottom: -3px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-appliances-technicians {
+    margin-top: 45px;
+  }
+
+  .home-appliances-technicians-header {
+    text-align: center;
+  }
+
+  .home-appliances-technicians-header h2 {
+    font-size: 18px;
+  }
+
+  .home-appliances-technicians-header p {
+    font-size: 11px;
+  }
+
+  .home-appliances-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 20px;
+  }
+
+  .home-appliances-filter {
+    height: 38px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+
+  .home-appliances-filter-dropdown {
+    min-width: 130px;
+  }
+
+  .home-appliances-active-filters {
+    margin-top: 12px;
+
+    gap: 5px;
+  }
+
+  .home-appliances-filter-label {
+    font-size: 8px;
+  }
+
+  .home-appliances-clear-filters {
+    font-size: 8px;
+  }
+
+  .home-appliances-technician-card {
+    padding: 14px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .home-appliances-breadcrumb {
+    padding: 15px 12px 20px;
+
+    font-size: 11px;
+  }
+
+  .home-appliances-hero {
+    padding: 0 10px;
+  }
+
+  .home-appliances-hero-pattern {
+    height: 165px;
+  }
+
+  .home-appliances-title-wrapper h1 {
+    font-size: 21px;
+  }
+
+  .home-appliances-hero-content p {
+    font-size: 12px;
+  }
+
+  .home-appliances-arrow {
+    left: -34px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-appliances-technicians {
+    margin-top: 35px;
+  }
+
+  .home-appliances-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .home-appliances-filter {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+  }
+
+  .home-appliances-filter img {
+    width: 7px;
+    height: 5px;
+  }
+
+  .home-appliances-filter-dropdown {
+    min-width: 120px;
+  }
+
+  .home-appliances-filter-option {
+    padding: 7px 9px;
+
+    font-size: 10px;
+  }
+
+  .home-appliances-filter-label {
+    min-height: 23px;
+
+    padding: 3px 6px;
+
+    font-size: 7px;
+  }
+
+  .home-appliances-filter-label button {
+    width: 12px;
+    height: 12px;
+
+    font-size: 10px;
+  }
+
+  .home-appliances-clear-filters {
+    font-size: 8px;
+  }
+
+  .home-appliances-results-header {
+    font-size: 10px;
+  }
+
+  .home-appliances-technician-card {
+    padding: 12px;
+
+    border-radius: 12px;
+  }
+
+  .home-appliances-image-wrapper,
+  .home-appliances-image-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-appliances-technician-text h3 {
+    font-size: 12px;
+  }
+
+  .home-appliances-technician-text p {
+    font-size: 9px;
+  }
+
+  .home-appliances-technician-meta {
+    font-size: 8px;
+  }
+
+  .home-appliances-rating {
+    font-size: 10px;
+  }
+
+  .home-appliances-star {
+    font-size: 12px;
+  }
+
+  .home-appliances-card-bottom {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .home-appliances-price {
+    justify-content: flex-start;
+  }
+
+  .home-appliances-technician-buttons {
+    width: 100%;
+  }
+
+  .home-appliances-profile-btn,
+  .home-appliances-book-btn {
+    flex: 1;
+
+    padding: 0 8px;
+  }
+}
