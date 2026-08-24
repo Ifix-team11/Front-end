@@ -1,12 +1,14 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
-import { Toaster } from "react-hot-toast";
+//import { Toaster } from "react-hot-toast";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
 import TechniciansSection from "./components/TechniciansSection/TechniciansSection";
