@@ -21,6 +21,11 @@ import PaintingServices from "./components/painting/PaintingServices";
 import HomeAppliancesServices from "./components/Appliances/HomeAppliancesServices";
 import PestControlServices from "./components/PestControl/PestControlServices";
 
+import Booking from "./components/Booking/Booking";
+import Orders from "./components/Orders/MyOrders";
+import OrderDetails from "./components/Orders/OrderDetails";
+import AvailableOrders from "./components/AvailableOrders/AvailableOrders";
+
 function Layout() {
   return (
     <>
@@ -44,7 +49,9 @@ function AuthLayout() {
 }
 
 const router = createBrowserRouter([
+  // ===============================
   // Authentication
+  // ===============================
   {
     element: <AuthLayout />,
     children: [
@@ -63,11 +70,15 @@ const router = createBrowserRouter([
     ],
   },
 
+  // ===============================
   // Main Website
+  // ===============================
   {
     element: <Layout />,
     children: [
+      // ===============================
       // Home
+      // ===============================
       {
         path: "/",
         element: (
@@ -82,19 +93,47 @@ const router = createBrowserRouter([
         ),
       },
 
+      // ===============================
       // Store
+      // ===============================
       {
         path: "/store",
         element: <StoreHero />,
       },
 
+      // ===============================
       // Technicians
+      // ===============================
       {
         path: "/technicians",
         element: <TechniciansSection />,
       },
 
+      // ===============================
+      // Booking
+      // ===============================
+      {
+        path: "/booking/:service/:technicianId",
+        element: <Booking />,
+      },
+
+      // ===============================
+      // Orders
+      // ===============================
+      {
+        path: "/orders",
+        element: <Orders />,
+      },
+
+      // Order Details / Tracking
+      {
+        path: "/orders/:id",
+        element: <OrderDetails />,
+      },
+
+      // ===============================
       // Services
+      // ===============================
       {
         path: "/electricity",
         element: <ElectricalServices />,
@@ -120,19 +159,30 @@ const router = createBrowserRouter([
         element: <PestControlServices />,
       },
 
+      {
+        path: "/availableorders",
+        element: <AvailableOrders />,
+      },
+
+      // ===============================
       // Partners
+      // ===============================
       {
         path: "/partners",
         element: <div>كن شريكنا</div>,
       },
 
+      // ===============================
       // Contact
+      // ===============================
       {
         path: "/contact",
         element: <div>تواصل معنا</div>,
       },
 
+      // ===============================
       // Not Found
+      // ===============================
       {
         path: "*",
         element: <div>الصفحة غير موجودة</div>,

@@ -1,11 +1,10 @@
-import { useState } from "react";
 import "./PlumbingServices.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import vectorY from "../../assets/SVG/Vector-Y.svg";
 import arrowIcon from "../../assets/SVG/Frame-Arrow.svg";
 import technicianImage from "../../assets/images/Ellipse 82.png";
-
-type FilterType = "type" | "sort" | "rating" | "price" | "city" | "district";
 
 type Technician = {
   id: number;
@@ -20,15 +19,16 @@ type Technician = {
   distance: number;
 };
 
-type ActiveFilter = {
-  type: FilterType;
-  label: string;
-  value: string;
-};
+type FilterType = "type" | "sort" | "rating" | "price" | "city" | "district";
 
-/* =====================================================
-   TECHNICIANS DATA
-===================================================== */
+type ActiveFilters = {
+  type: string | null;
+  sort: string | null;
+  rating: string | null;
+  price: string | null;
+  city: string | null;
+  district: string | null;
+};
 
 const technicians: Technician[] = [
   {
@@ -52,7 +52,7 @@ const technicians: Technician[] = [
     reviews: 15,
     experience: 10,
     price: 250,
-    repairs: 110,
+    repairs: 95,
     distance: 3,
   },
   {
@@ -61,19 +61,19 @@ const technicians: Technician[] = [
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.7,
-    reviews: 18,
-    experience: 9,
+    reviews: 12,
+    experience: 8,
     price: 180,
-    repairs: 95,
+    repairs: 87,
     distance: 4,
   },
   {
     id: 4,
-    name: "عمر حسن",
+    name: "خالد حسن",
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.9,
-    reviews: 22,
+    reviews: 20,
     experience: 14,
     price: 300,
     repairs: 150,
@@ -81,286 +81,178 @@ const technicians: Technician[] = [
   },
   {
     id: 5,
-    name: "كريم خالد",
+    name: "عمر أحمد",
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.6,
-    reviews: 12,
-    experience: 8,
+    reviews: 9,
+    experience: 7,
     price: 220,
-    repairs: 85,
+    repairs: 76,
     distance: 6,
   },
   {
     id: 6,
-    name: "يوسف أحمد",
+    name: "محمد حسن",
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.8,
-    reviews: 20,
+    reviews: 18,
     experience: 11,
-    price: 270,
-    repairs: 130,
+    price: 280,
+    repairs: 110,
     distance: 3,
   },
   {
     id: 7,
-    name: "إبراهيم محمود",
+    name: "علي محمود",
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.5,
-    reviews: 9,
-    experience: 7,
-    price: 190,
-    repairs: 75,
+    reviews: 8,
+    experience: 6,
+    price: 170,
+    repairs: 65,
     distance: 7,
   },
   {
     id: 8,
-    name: "مصطفى حسن",
+    name: "حسام أحمد",
     specialty: "فني سباكة",
     image: technicianImage,
     rating: 4.9,
-    reviews: 25,
-    experience: 15,
-    price: 350,
-    repairs: 170,
-    distance: 4,
+    reviews: 22,
+    experience: 13,
+    price: 320,
+    repairs: 165,
+    distance: 2,
   },
 ];
 
-/* =====================================================
-   FILTER OPTIONS
-===================================================== */
+const filterOptions: Record<FilterType, string[]> = {
+  type: ["فنيين", "مراكز صيانة"],
+  sort: ["الأعلى تقييماً", "الأقل سعراً", "الأعلى سعراً"],
+  rating: ["5 نجوم", "4 نجوم فأكثر", "3 نجوم فأكثر"],
+  price: ["أقل من 200 جنيه", "200 - 500 جنيه", "أكثر من 500 جنيه"],
+  city: ["الجيزة", "القاهرة", "6 أكتوبر"],
+  district: ["الدقي", "المهندسين", "العجوزة"],
+};
 
-const filterOptions: Record<FilterType, { label: string; options: string[] }> =
-  {
-    type: {
-      label: "النوع",
-      options: ["فنيين", "مراكز صيانة"],
-    },
-
-    sort: {
-      label: "ترتيب حسب",
-      options: ["الأعلى تقييماً", "الأقل سعراً", "الأعلى سعراً"],
-    },
-
-    rating: {
-      label: "التقييم",
-      options: ["5 نجوم", "4 نجوم فأكثر", "3 نجوم فأكثر"],
-    },
-
-    price: {
-      label: "السعر",
-      options: ["أقل من 200 جنيه", "200 - 500 جنيه", "أكثر من 500 جنيه"],
-    },
-
-    city: {
-      label: "المدينة",
-      options: ["الجيزة", "القاهرة", "6 أكتوبر"],
-    },
-
-    district: {
-      label: "الحي",
-      options: ["الدقي", "المهندسين", "العجوزة"],
-    },
-  };
-
-/* =====================================================
-   COMPONENT
-===================================================== */
+const filterLabels: Record<FilterType, string> = {
+  type: "النوع",
+  sort: "ترتيب حسب",
+  rating: "التقييم",
+  price: "السعر",
+  city: "المدينة",
+  district: "الحي",
+};
 
 const PlumbingServices = () => {
   const [openFilter, setOpenFilter] = useState<FilterType | null>(null);
 
-  const [activeFilters, setActiveFilters] = useState<ActiveFilter[]>([
-    {
-      type: "type",
-      label: "النوع",
-      value: "فنيين",
-    },
-    {
-      type: "rating",
-      label: "التقييم",
-      value: "4.9 ⭐",
-    },
-    {
-      type: "city",
-      label: "المدينة",
-      value: "الجيزة",
-    },
-  ]);
+  const [activeFilters, setActiveFilters] = useState<ActiveFilters>({
+    type: null,
+    sort: null,
+    rating: null,
+    price: null,
+    city: null,
+    district: null,
+  });
 
-  /* =====================================================
-     FILTER TOGGLE
-  ===================================================== */
+  const [filteredTechnicians, setFilteredTechnicians] =
+    useState<Technician[]>(technicians);
 
   const toggleFilter = (filter: FilterType) => {
     setOpenFilter((current) => (current === filter ? null : filter));
   };
 
-  /* =====================================================
-     SELECT FILTER
-  ===================================================== */
+  const applyFilter = (filter: FilterType, value: string) => {
+    let result = [...technicians];
 
-  const handleFilterSelect = (filterType: FilterType, value: string) => {
-    const filter = filterOptions[filterType];
+    if (filter === "rating") {
+      if (value === "5 نجوم") {
+        result = result.filter((technician) => technician.rating >= 5);
+      }
 
-    setActiveFilters((current) => {
-      const withoutCurrent = current.filter((item) => item.type !== filterType);
+      if (value === "4 نجوم فأكثر") {
+        result = result.filter((technician) => technician.rating >= 4);
+      }
 
-      return [
-        ...withoutCurrent,
-        {
-          type: filterType,
-          label: filter.label,
-          value,
-        },
-      ];
-    });
+      if (value === "3 نجوم فأكثر") {
+        result = result.filter((technician) => technician.rating >= 3);
+      }
+    }
+
+    if (filter === "price") {
+      if (value === "أقل من 200 جنيه") {
+        result = result.filter((technician) => technician.price < 200);
+      }
+
+      if (value === "200 - 500 جنيه") {
+        result = result.filter(
+          (technician) => technician.price >= 200 && technician.price <= 500,
+        );
+      }
+
+      if (value === "أكثر من 500 جنيه") {
+        result = result.filter((technician) => technician.price > 500);
+      }
+    }
+
+    if (filter === "sort") {
+      if (value === "الأعلى تقييماً") {
+        result.sort((a, b) => b.rating - a.rating);
+      }
+
+      if (value === "الأقل سعراً") {
+        result.sort((a, b) => a.price - b.price);
+      }
+
+      if (value === "الأعلى سعراً") {
+        result.sort((a, b) => b.price - a.price);
+      }
+    }
+
+    setFilteredTechnicians(result);
+  };
+
+  const selectFilter = (filter: FilterType, value: string) => {
+    setActiveFilters((current) => ({
+      ...current,
+      [filter]: value,
+    }));
 
     setOpenFilter(null);
+
+    applyFilter(filter, value);
   };
 
-  /* =====================================================
-     REMOVE FILTER
-  ===================================================== */
+  const removeFilter = (filter: FilterType) => {
+    setActiveFilters((current) => ({
+      ...current,
+      [filter]: null,
+    }));
 
-  const removeFilter = (filterType: FilterType) => {
-    setActiveFilters((current) =>
-      current.filter((item) => item.type !== filterType),
-    );
+    setFilteredTechnicians(technicians);
   };
 
-  /* =====================================================
-     CLEAR FILTERS
-  ===================================================== */
-
-  const clearFilters = () => {
-    setActiveFilters([]);
-    setOpenFilter(null);
-  };
-
-  /* =====================================================
-     FILTERED TECHNICIANS
-  ===================================================== */
-
-  const filteredTechnicians = technicians
-    .filter((technician) => {
-      const ratingFilter = activeFilters.find(
-        (filter) => filter.type === "rating",
-      );
-
-      const priceFilter = activeFilters.find(
-        (filter) => filter.type === "price",
-      );
-
-      /* ================= Rating ================= */
-
-      if (ratingFilter) {
-        /*
-          5 نجوم
-          مفيش فني عنده 5 بالضبط
-          وبالتالي سيظهر Empty State
-        */
-
-        if (ratingFilter.value === "5 نجوم" && technician.rating < 5) {
-          return false;
-        }
-
-        if (ratingFilter.value === "4 نجوم فأكثر" && technician.rating < 4) {
-          return false;
-        }
-
-        if (ratingFilter.value === "3 نجوم فأكثر" && technician.rating < 3) {
-          return false;
-        }
-      }
-
-      /* ================= Price ================= */
-
-      if (priceFilter) {
-        if (
-          priceFilter.value === "أقل من 200 جنيه" &&
-          technician.price >= 200
-        ) {
-          return false;
-        }
-
-        if (
-          priceFilter.value === "200 - 500 جنيه" &&
-          (technician.price < 200 || technician.price > 500)
-        ) {
-          return false;
-        }
-
-        if (
-          priceFilter.value === "أكثر من 500 جنيه" &&
-          technician.price <= 500
-        ) {
-          return false;
-        }
-      }
-
-      return true;
-    })
-    .sort((a, b) => {
-      const sortFilter = activeFilters.find((filter) => filter.type === "sort");
-
-      if (!sortFilter) {
-        return 0;
-      }
-
-      /* الأعلى تقييماً */
-
-      if (sortFilter.value === "الأعلى تقييماً") {
-        return b.rating - a.rating;
-      }
-
-      /* الأقل سعراً */
-
-      if (sortFilter.value === "الأقل سعراً") {
-        return a.price - b.price;
-      }
-
-      /* الأعلى سعراً */
-
-      if (sortFilter.value === "الأعلى سعراً") {
-        return b.price - a.price;
-      }
-
-      return 0;
+  const clearAllFilters = () => {
+    setActiveFilters({
+      type: null,
+      sort: null,
+      rating: null,
+      price: null,
+      city: null,
+      district: null,
     });
 
-  /* =====================================================
-     PROFILE
-  ===================================================== */
-
-  const handleProfile = (technician: Technician) => {
-    console.log("فتح الملف الشخصي للفني:", technician);
+    setFilteredTechnicians(technicians);
+    setOpenFilter(null);
   };
-
-  /* =====================================================
-     BOOKING
-  ===================================================== */
-
-  const handleBooking = (technician: Technician) => {
-    console.log("حجز الفني:", technician);
-
-    // جاهز لاحقاً للـ API
-    // navigate(`/booking/${technician.id}`);
-  };
-
-  /* =====================================================
-     RETURN
-  ===================================================== */
 
   return (
     <main className="plumbing-page" dir="rtl">
-      {/* =================================================
-          BREADCRUMB
-      ================================================= */}
-
+      {/* Breadcrumb */}
       <div className="plumbing-breadcrumb">
         <span className="plumbing-breadcrumb-current">الرئيسية</span>
 
@@ -369,10 +261,7 @@ const PlumbingServices = () => {
         <span className="plumbing-breadcrumb-active">السباكة</span>
       </div>
 
-      {/* =================================================
-          HERO
-      ================================================= */}
-
+      {/* Hero */}
       <section className="plumbing-hero">
         <div className="plumbing-hero-pattern">
           <div className="plumbing-hero-content">
@@ -393,176 +282,118 @@ const PlumbingServices = () => {
         </div>
       </section>
 
-      {/* =================================================
-          TECHNICIANS SECTION
-      ================================================= */}
-
+      {/* Technicians */}
       <section className="plumbing-technicians">
         <div className="plumbing-technicians-container">
-          {/* =================================================
-              HEADER
-          ================================================= */}
-
+          {/* Header */}
           <div className="plumbing-technicians-header">
-            <h2>اختر الفني او المركز المناسب</h2>
+            <h2>اختر الفني أو المركز المناسب</h2>
 
-            <p>اختر من بين الفنيين و المراكز المعتمدة بالقرب منك</p>
+            <p>اختر من بين الفنيين والمراكز المعتمدة بالقرب منك</p>
           </div>
 
-          {/* =================================================
-              FILTERS
-          ================================================= */}
-
+          {/* Filters */}
           <div className="plumbing-filters">
-            {(Object.keys(filterOptions) as FilterType[]).map((filterType) => {
-              const filter = filterOptions[filterType];
+            {(Object.keys(filterOptions) as FilterType[]).map((filter) => (
+              <div className="plumbing-filter-wrapper" key={filter}>
+                <div className="plumbing-filter-box">
+                  <button
+                    type="button"
+                    className={`plumbing-filter ${
+                      openFilter === filter ? "plumbing-filter-open" : ""
+                    }`}
+                    onClick={() => toggleFilter(filter)}
+                  >
+                    <span>{filterLabels[filter]}</span>
 
-              const selectedFilter = activeFilters.find(
-                (item) => item.type === filterType,
-              );
+                    <span className="plumbing-filter-arrow">
+                      <img src={arrowIcon} alt="" />
+                    </span>
+                  </button>
 
-              const isOpen = openFilter === filterType;
+                  {openFilter === filter && (
+                    <div className="plumbing-filter-dropdown">
+                      {filterOptions[filter].map((option) => (
+                        <button
+                          type="button"
+                          key={option}
+                          className={`plumbing-filter-option ${
+                            activeFilters[filter] === option
+                              ? "plumbing-filter-option-selected"
+                              : ""
+                          }`}
+                          onClick={() => selectFilter(filter, option)}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Active Filters */}
+          <div className="plumbing-active-filters">
+            {(Object.keys(activeFilters) as FilterType[]).map((filter) => {
+              const value = activeFilters[filter];
+
+              if (!value) return null;
 
               return (
-                <div className="plumbing-filter-wrapper" key={filterType}>
-                  <div className="plumbing-filter-box">
-                    <button
-                      type="button"
-                      className="plumbing-filter"
-                      onClick={() => toggleFilter(filterType)}
-                      aria-expanded={isOpen}
-                    >
-                      <span>{selectedFilter?.value ?? filter.label}</span>
+                <span
+                  className="plumbing-filter-label"
+                  key={`${filter}-${value}`}
+                >
+                  <span>{filterLabels[filter]}:</span>
 
-                      <span className={isOpen ? "plumbing-arrow-open" : ""}>
-                        <img src={arrowIcon} alt="" />
-                      </span>
-                    </button>
+                  <strong>{value}</strong>
 
-                    {/* DROPDOWN */}
-
-                    {isOpen && (
-                      <div className="plumbing-filter-dropdown">
-                        {filter.options.map((option) => (
-                          <button
-                            type="button"
-                            key={option}
-                            className={
-                              selectedFilter?.value === option
-                                ? "plumbing-filter-option plumbing-filter-option-selected"
-                                : "plumbing-filter-option"
-                            }
-                            onClick={() =>
-                              handleFilterSelect(filterType, option)
-                            }
-                          >
-                            {option}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
+                  <button
+                    type="button"
+                    aria-label={`إزالة ${filterLabels[filter]}`}
+                    onClick={() => removeFilter(filter)}
+                  >
+                    ×
+                  </button>
+                </span>
               );
             })}
-          </div>
 
-          {/* =================================================
-              ACTIVE FILTERS
-          ================================================= */}
-
-          <div className="plumbing-active-filters">
-            {activeFilters.map((filter) => (
-              <span className="plumbing-filter-label" key={filter.type}>
-                <span>{filter.label}:</span>
-
-                <strong>{filter.value}</strong>
-
-                <button
-                  type="button"
-                  onClick={() => removeFilter(filter.type)}
-                  aria-label={`إزالة فلتر ${filter.label}`}
-                >
-                  ×
-                </button>
-              </span>
-            ))}
-
-            {activeFilters.length > 0 && (
+            {Object.values(activeFilters).some(Boolean) && (
               <button
                 type="button"
                 className="plumbing-clear-filters"
-                onClick={clearFilters}
+                onClick={clearAllFilters}
               >
                 إزالة جميع الفلاتر
               </button>
             )}
           </div>
 
-          {/* =================================================
-              RESULTS HEADER
-          ================================================= */}
-
+          {/* Results */}
           <div className="plumbing-results-header">
             <span>
               عدد النتائج <strong>({filteredTechnicians.length})</strong>
             </span>
           </div>
 
-          {/* =================================================
-              TECHNICIANS GRID
-          ================================================= */}
-
+          {/* Cards */}
           <div className="plumbing-technicians-grid">
-            {filteredTechnicians.length === 0 ? (
-              /* =================================================
-                 EMPTY STATE
-              ================================================= */
-
-              <div className="plumbing-empty-state">
-                <h3>لا يوجد فنيون مطابقون</h3>
-
-                <p>
-                  لم نجد فنيين مطابقين للفلاتر التي اخترتها.
-                  <br />
-                  جرّب تغيير الفلاتر أو مسحها.
-                </p>
-
-                <button
-                  type="button"
-                  className="plumbing-empty-button"
-                  onClick={clearFilters}
-                >
-                  مسح الفلاتر
-                </button>
-              </div>
-            ) : (
-              /* =================================================
-                 TECHNICIAN CARDS
-              ================================================= */
-
+            {filteredTechnicians.length > 0 ? (
               filteredTechnicians.map((technician) => (
                 <article
                   className="plumbing-technician-card"
                   key={technician.id}
                 >
-                  {/* =================================================
-                        CARD TOP
-                    ================================================= */}
-
                   <div className="plumbing-card-top">
-                    {/* Technician Info */}
-
                     <div className="plumbing-technician-info">
-                      {/* Image */}
-
                       <div className="plumbing-image-wrapper">
                         <img src={technician.image} alt={technician.name} />
 
                         <span className="plumbing-online-dot" />
                       </div>
-
-                      {/* Text */}
 
                       <div className="plumbing-technician-text">
                         <h3>{technician.name}</h3>
@@ -577,8 +408,6 @@ const PlumbingServices = () => {
                       </div>
                     </div>
 
-                    {/* Rating */}
-
                     <div className="plumbing-rating">
                       <span>{technician.rating}</span>
 
@@ -586,19 +415,9 @@ const PlumbingServices = () => {
                     </div>
                   </div>
 
-                  {/* =================================================
-                        DIVIDER
-                    ================================================= */}
-
                   <div className="plumbing-card-divider" />
 
-                  {/* =================================================
-                        CARD BOTTOM
-                    ================================================= */}
-
                   <div className="plumbing-card-bottom">
-                    {/* Price */}
-
                     <div className="plumbing-price">
                       <span className="plumbing-price-label">يبدأ من</span>
 
@@ -609,28 +428,41 @@ const PlumbingServices = () => {
                       <span className="plumbing-price-currency">جنيه</span>
                     </div>
 
-                    {/* Buttons */}
-
                     <div className="plumbing-technician-buttons">
-                      <button
-                        type="button"
+                      <Link
+                        to={`/technician/${technician.id}`}
                         className="plumbing-profile-btn"
-                        onClick={() => handleProfile(technician)}
                       >
                         الملف الشخصي
-                      </button>
-
-                      <button
-                        type="button"
+                      </Link>
+                      <Link
+                        to={`/booking/plumbing/${technician.id}`}
                         className="plumbing-book-btn"
-                        onClick={() => handleBooking(technician)}
                       >
                         احجز الآن
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </article>
               ))
+            ) : (
+              <div className="plumbing-empty-state">
+                <h3>لا يوجد فنيون مطابقون</h3>
+
+                <p>
+                  لم نجد فنيين مطابقين للفلاتر التي اخترتها.
+                  <br />
+                  جرّب تغيير الفلاتر أو مسحها.
+                </p>
+
+                <button
+                  type="button"
+                  className="plumbing-empty-button"
+                  onClick={clearAllFilters}
+                >
+                  مسح الفلاتر
+                </button>
+              </div>
             )}
           </div>
         </div>

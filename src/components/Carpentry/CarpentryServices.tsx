@@ -222,7 +222,7 @@ const CarpentryServices = () => {
   };
 
   const handleBooking = (technicianId: number) => {
-    navigate(`/booking/${technicianId}`);
+    navigate(`/booking/carpentry/${technicianId}`);
   };
 
   const filteredTechnicians = useMemo(() => {

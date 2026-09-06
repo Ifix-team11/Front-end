@@ -1,0 +1,410 @@
+.orders-page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: "Tajawal", sans-serif;
+  color: #172033;
+  padding: 20px 0 60px;
+}
+
+.orders-container {
+  width: min(90%, 1050px);
+  margin: 0 auto;
+}
+
+/* =========================
+   Breadcrumb
+========================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #7d8797;
+  margin-bottom: 16px;
+}
+
+.breadcrumb-active {
+  color: #2360df;
+}
+
+/* =========================
+   Header
+========================= */
+
+.orders-header {
+  margin-bottom: 25px;
+}
+
+.orders-header h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.orders-header p {
+  margin: 0;
+  color: #697386;
+  font-size: 13px;
+}
+
+/* =========================
+   Tabs
+========================= */
+
+.orders-tabs {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  border-bottom: 1px solid #e1e5eb;
+  margin-bottom: 20px;
+}
+
+.orders-tabs button {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0 12px 13px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #667085;
+  cursor: pointer;
+}
+
+.orders-tabs button.active {
+  color: #2459d7;
+  font-weight: 700;
+}
+
+.orders-tabs button.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #315fd7;
+  border-radius: 2px 2px 0 0;
+}
+
+/* =========================
+   Orders List
+========================= */
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* =========================
+   Order Card
+========================= */
+
+.order-card {
+  border: 1px solid #dce1e8;
+  border-radius: 12px;
+  padding: 13px;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 18px rgba(31, 51, 86, 0.07);
+}
+
+/* =========================
+   Main
+========================= */
+
+.order-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 70px;
+}
+
+/* =========================
+   Service Icon
+========================= */
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf2ff;
+  border-radius: 11px;
+
+  font-size: 24px;
+}
+
+/* =========================
+   Info
+========================= */
+
+.order-info {
+  flex: 1;
+}
+
+.order-info h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #202938;
+}
+
+.order-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #667085;
+  font-size: 11px;
+}
+
+.separator {
+  color: #b0b7c3;
+}
+
+.problem-description {
+  margin: 7px 0 0;
+  font-size: 12px;
+  color: #667085;
+}
+
+/* =========================
+   Status
+========================= */
+
+.order-status {
+  min-width: 78px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+/* Pending */
+
+.order-status.pending {
+  color: #3971d8;
+  background: #eef4ff;
+}
+
+.order-status.pending .status-dot {
+  background: #3971d8;
+}
+
+/* Accepted */
+
+.order-status.accepted {
+  color: #198754;
+  background: #eaf8f0;
+}
+
+.order-status.accepted .status-dot {
+  background: #198754;
+}
+
+/* Rejected */
+
+.order-status.rejected {
+  color: #e05268;
+  background: #fdecef;
+}
+
+.order-status.rejected .status-dot {
+  background: #e05268;
+}
+
+/* Completed */
+
+.order-status.completed {
+  color: #198754;
+  background: #eaf8f0;
+}
+
+.order-status.completed .status-dot {
+  background: #198754;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.order-footer {
+  border-top: 1px solid #edf0f4;
+  margin-top: 10px;
+  padding-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   Order ID
+========================= */
+
+.order-details {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 10px;
+  color: #98a2b3;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.order-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.order-actions button {
+  height: 32px;
+  padding: 0 28px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 11px;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.technician-button {
+  background: #fff;
+  border: 1px solid #9aa5b5;
+  color: #667085;
+}
+
+.technician-button:hover {
+  background: #f7f8fa;
+}
+
+.details-button {
+  background: #2858ce;
+  border: 1px solid #2858ce;
+  color: white;
+}
+
+.details-button:hover {
+  background: #1e49b3;
+}
+
+/* =========================
+   Loading
+========================= */
+
+.orders-loading,
+.orders-error,
+.empty-orders {
+  text-align: center;
+  padding: 60px 20px;
+  color: #667085;
+  font-size: 14px;
+}
+
+.orders-error {
+  color: #dc3545;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .orders-container {
+    width: 92%;
+  }
+
+  .orders-tabs {
+    gap: 20px;
+  }
+
+  .order-main {
+    align-items: flex-start;
+  }
+
+  .order-status {
+    min-width: 70px;
+  }
+
+  .order-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .order-actions {
+    width: 100%;
+  }
+
+  .order-actions button {
+    flex: 1;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .orders-header h1 {
+    font-size: 21px;
+  }
+
+  .order-main {
+    position: relative;
+    padding-top: 5px;
+  }
+
+  .order-status {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .order-info {
+    padding-left: 5px;
+  }
+
+  .order-info h2 {
+    font-size: 16px;
+  }
+
+  .order-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .separator {
+    display: none;
+  }
+}

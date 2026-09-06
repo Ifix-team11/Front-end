@@ -30,6 +30,10 @@ type ActiveFilters = {
   district: string | null;
 };
 
+/* =====================================================
+   TECHNICIANS
+===================================================== */
+
 const technicians: Technician[] = [
   {
     id: 1,
@@ -129,12 +133,21 @@ const technicians: Technician[] = [
   },
 ];
 
+/* =====================================================
+   FILTERS
+===================================================== */
+
 const filterOptions: Record<FilterType, string[]> = {
   type: ["فنيين", "مراكز صيانة"],
+
   sort: ["الأعلى تقييماً", "الأقل سعراً", "الأعلى سعراً"],
+
   rating: ["5 نجوم", "4 نجوم فأكثر", "3 نجوم فأكثر"],
+
   price: ["أقل من 200 جنيه", "200 - 500 جنيه", "أكثر من 500 جنيه"],
+
   city: ["الجيزة", "القاهرة", "6 أكتوبر"],
+
   district: ["الدقي", "المهندسين", "العجوزة"],
 };
 
@@ -146,6 +159,10 @@ const filterLabels: Record<FilterType, string> = {
   city: "المدينة",
   district: "الحي",
 };
+
+/* =====================================================
+   COMPONENT
+===================================================== */
 
 const ElectricalServices = () => {
   const [openFilter, setOpenFilter] = useState<FilterType | null>(null);
@@ -162,97 +179,131 @@ const ElectricalServices = () => {
   const [filteredTechnicians, setFilteredTechnicians] =
     useState<Technician[]>(technicians);
 
+  /* =====================================================
+     TOGGLE FILTER
+  ===================================================== */
+
   const toggleFilter = (filter: FilterType) => {
     setOpenFilter((current) => (current === filter ? null : filter));
   };
 
-  const selectFilter = (filter: FilterType, value: string) => {
-    setActiveFilters((current) => ({
-      ...current,
-      [filter]: value,
-    }));
+  /* =====================================================
+     APPLY ALL FILTERS
+  ===================================================== */
 
-    setOpenFilter(null);
-
-    applyFilter(filter, value);
-  };
-
-  const applyFilter = (filter: FilterType, value: string) => {
+  const applyFilters = (filters: ActiveFilters) => {
     let result = [...technicians];
 
-    if (filter === "rating") {
-      if (value === "5 نجوم") {
-        result = result.filter((technician) => technician.rating >= 5);
-      }
+    /* Rating */
 
-      if (value === "4 نجوم فأكثر") {
-        result = result.filter((technician) => technician.rating >= 4);
-      }
-
-      if (value === "3 نجوم فأكثر") {
-        result = result.filter((technician) => technician.rating >= 3);
-      }
+    if (filters.rating === "5 نجوم") {
+      result = result.filter((technician) => technician.rating >= 5);
     }
 
-    if (filter === "price") {
-      if (value === "أقل من 200 جنيه") {
-        result = result.filter((technician) => technician.price < 200);
-      }
-
-      if (value === "200 - 500 جنيه") {
-        result = result.filter(
-          (technician) => technician.price >= 200 && technician.price <= 500,
-        );
-      }
-
-      if (value === "أكثر من 500 جنيه") {
-        result = result.filter((technician) => technician.price > 500);
-      }
+    if (filters.rating === "4 نجوم فأكثر") {
+      result = result.filter((technician) => technician.rating >= 4);
     }
 
-    if (filter === "sort") {
-      if (value === "الأعلى تقييماً") {
-        result.sort((a, b) => b.rating - a.rating);
-      }
+    if (filters.rating === "3 نجوم فأكثر") {
+      result = result.filter((technician) => technician.rating >= 3);
+    }
 
-      if (value === "الأقل سعراً") {
-        result.sort((a, b) => a.price - b.price);
-      }
+    /* Price */
 
-      if (value === "الأعلى سعراً") {
-        result.sort((a, b) => b.price - a.price);
-      }
+    if (filters.price === "أقل من 200 جنيه") {
+      result = result.filter((technician) => technician.price < 200);
+    }
+
+    if (filters.price === "200 - 500 جنيه") {
+      result = result.filter(
+        (technician) => technician.price >= 200 && technician.price <= 500,
+      );
+    }
+
+    if (filters.price === "أكثر من 500 جنيه") {
+      result = result.filter((technician) => technician.price > 500);
+    }
+
+    /* Sort */
+
+    if (filters.sort === "الأعلى تقييماً") {
+      result.sort((a, b) => b.rating - a.rating);
+    }
+
+    if (filters.sort === "الأقل سعراً") {
+      result.sort((a, b) => a.price - b.price);
+    }
+
+    if (filters.sort === "الأعلى سعراً") {
+      result.sort((a, b) => b.price - a.price);
     }
 
     setFilteredTechnicians(result);
   };
 
-  const removeFilter = (filter: FilterType) => {
-    setActiveFilters((current) => ({
-      ...current,
-      [filter]: null,
-    }));
+  /* =====================================================
+     SELECT FILTER
+  ===================================================== */
 
-    setFilteredTechnicians(technicians);
+  const selectFilter = (filter: FilterType, value: string) => {
+    const updatedFilters = {
+      ...activeFilters,
+      [filter]: value,
+    };
+
+    setActiveFilters(updatedFilters);
+
+    setOpenFilter(null);
+
+    applyFilters(updatedFilters);
   };
 
+  /* =====================================================
+     REMOVE FILTER
+  ===================================================== */
+
+  const removeFilter = (filter: FilterType) => {
+    const updatedFilters = {
+      ...activeFilters,
+      [filter]: null,
+    };
+
+    setActiveFilters(updatedFilters);
+
+    applyFilters(updatedFilters);
+  };
+
+  /* =====================================================
+     CLEAR FILTERS
+  ===================================================== */
+
   const clearAllFilters = () => {
-    setActiveFilters({
+    const emptyFilters: ActiveFilters = {
       type: null,
       sort: null,
       rating: null,
       price: null,
       city: null,
       district: null,
-    });
+    };
+
+    setActiveFilters(emptyFilters);
 
     setFilteredTechnicians(technicians);
+
     setOpenFilter(null);
   };
 
+  /* =====================================================
+     RETURN
+  ===================================================== */
+
   return (
     <main className="electrical-page" dir="rtl">
-      {/* Breadcrumb */}
+      {/* =================================================
+          BREADCRUMB
+      ================================================= */}
+
       <div className="electrical-breadcrumb">
         <span className="electrical-breadcrumb-current">الرئيسية</span>
 
@@ -261,7 +312,10 @@ const ElectricalServices = () => {
         <span className="electrical-breadcrumb-active">الكهرباء</span>
       </div>
 
-      {/* Hero */}
+      {/* =================================================
+          HERO
+      ================================================= */}
+
       <section className="electrical-hero">
         <div className="electrical-hero-pattern">
           <div className="electrical-hero-content">
@@ -282,10 +336,14 @@ const ElectricalServices = () => {
         </div>
       </section>
 
-      {/* Technicians */}
+      {/* =================================================
+          TECHNICIANS
+      ================================================= */}
+
       <section className="electrical-technicians">
         <div className="electrical-technicians-container">
           {/* Header */}
+
           <div className="electrical-technicians-header">
             <h2>اختر الفني أو المركز المناسب</h2>
 
@@ -293,6 +351,7 @@ const ElectricalServices = () => {
           </div>
 
           {/* Filters */}
+
           <div className="electrical-filters">
             {(Object.keys(filterOptions) as FilterType[]).map((filter) => (
               <div className="electrical-filter-wrapper" key={filter}>
@@ -304,7 +363,7 @@ const ElectricalServices = () => {
                     }`}
                     onClick={() => toggleFilter(filter)}
                   >
-                    <span>{filterLabels[filter]}</span>
+                    <span>{activeFilters[filter] ?? filterLabels[filter]}</span>
 
                     <span className="electrical-filter-arrow">
                       <img src={arrowIcon} alt="" />
@@ -335,6 +394,7 @@ const ElectricalServices = () => {
           </div>
 
           {/* Active Filters */}
+
           <div className="electrical-active-filters">
             {(Object.keys(activeFilters) as FilterType[]).map((filter) => {
               const value = activeFilters[filter];
@@ -375,6 +435,7 @@ const ElectricalServices = () => {
           </div>
 
           {/* Results */}
+
           <div className="electrical-results-header">
             <span>
               عدد النتائج <strong>({filteredTechnicians.length})</strong>
@@ -382,6 +443,7 @@ const ElectricalServices = () => {
           </div>
 
           {/* Cards */}
+
           <div className="electrical-technicians-grid">
             {filteredTechnicians.length > 0 ? (
               filteredTechnicians.map((technician) => (
@@ -390,6 +452,7 @@ const ElectricalServices = () => {
                   key={technician.id}
                 >
                   {/* Card Top */}
+
                   <div className="electrical-card-top">
                     <div className="electrical-technician-info">
                       <div className="electrical-image-wrapper">
@@ -419,9 +482,11 @@ const ElectricalServices = () => {
                   </div>
 
                   {/* Divider */}
+
                   <div className="electrical-card-divider" />
 
                   {/* Card Bottom */}
+
                   <div className="electrical-card-bottom">
                     <div className="electrical-price">
                       <span className="electrical-price-label">يبدأ من</span>
@@ -441,8 +506,13 @@ const ElectricalServices = () => {
                         الملف الشخصي
                       </Link>
 
+                      {/* ============================
+                            IMPORTANT
+                            Booking Link
+                        ============================ */}
+
                       <Link
-                        to={`/booking/${technician.id}`}
+                        to={`/booking/electricity/${technician.id}`}
                         className="electrical-book-btn"
                       >
                         احجز الآن
@@ -463,7 +533,7 @@ const ElectricalServices = () => {
 
                 <button
                   type="button"
-                  className="plumbing-empty-button"
+                  className="electrical-empty-button"
                   onClick={clearAllFilters}
                 >
                   مسح الفلاتر

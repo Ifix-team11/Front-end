@@ -664,20 +664,20 @@ const PaintingServices = () => {
 
           {filteredTechnicians.length === 0 ? (
             <div className="painting-empty-state">
-                <h3>لا يوجد فنيون مطابقون</h3>
+              <h3>لا يوجد فنيون مطابقون</h3>
 
-                <p>
-                  لم نجد فنيين مطابقين للفلاتر التي اخترتها.
-                  <br />
-                  جرّب تغيير الفلاتر أو مسحها.
-                </p>
+              <p>
+                لم نجد فنيين مطابقين للفلاتر التي اخترتها.
+                <br />
+                جرّب تغيير الفلاتر أو مسحها.
+              </p>
 
-                <button
-                  type="button"
-                  className="plumbing-empty-button"
-                  onClick={clearFilters}
-                >
-                  مسح الفلاتر
+              <button
+                type="button"
+                className="plumbing-empty-button"
+                onClick={clearFilters}
+              >
+                مسح الفلاتر
               </button>
             </div>
           ) : (
@@ -745,7 +745,7 @@ const PaintingServices = () => {
                       </Link>
 
                       <Link
-                        to={`/booking/${technician.id}`}
+                        to={`/booking/painting/${technician.id}`}
                         className="painting-book-btn"
                       >
                         احجز الآن

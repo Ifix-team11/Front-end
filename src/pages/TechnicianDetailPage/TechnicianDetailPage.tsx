@@ -40,11 +40,8 @@ const trustChecks = [
 
 const TechnicianDetailPage = () => {
   const { id } = useParams();
-  const technician =
-    technicians.find((t) => t.id === id) ?? technicians[0];
-  const related = technicians
-    .filter((t) => t.id !== technician.id)
-    .slice(0, 2);
+  const technician = technicians.find((t) => t.id === id) ?? technicians[0];
+  const related = technicians.filter((t) => t.id !== technician.id).slice(0, 2);
 
   return (
     <div className={styles.page}>
@@ -52,9 +49,8 @@ const TechnicianDetailPage = () => {
 
       <div className={`ifix-container ${styles.content}`}>
         <div className={styles.breadcrumb}>
-          <Link to="/">الرئيسية</Link> /{" "}
-          <Link to="/technicians">الفنيين</Link> /{" "}
-          <span>تفاصيل الفني</span>
+          <Link to="/">الرئيسية</Link> / <Link to="/technicians">الفنيين</Link>{" "}
+          / <span>تفاصيل الفني</span>
         </div>
 
         <div className={styles.layout}>
@@ -84,7 +80,9 @@ const TechnicianDetailPage = () => {
               <div className={styles.statsRow}>
                 <div className={styles.statBox}>
                   <span className={styles.statLabel}>تقييم العملاء</span>
-                  <span className={styles.statValue}>★ {technician.rating}</span>
+                  <span className={styles.statValue}>
+                    ★ {technician.rating}
+                  </span>
                 </div>
                 <div className={styles.statBox}>
                   <span className={styles.statLabel}>سنوات الخبرة</span>
@@ -102,19 +100,17 @@ const TechnicianDetailPage = () => {
 
               <div className={styles.btnRow}>
                 <button className={styles.btnBook}>احجز الان</button>
-                <button className={styles.btnContact}>
-                  تواصل مع الفني ✆
-                </button>
+                <button className={styles.btnContact}>تواصل مع الفني ✆</button>
               </div>
             </div>
 
             <div className={styles.section}>
               <h2 className={styles.sectionTitle}>نبذة عن الفني</h2>
               <p className={styles.aboutText}>
-                فني متخصص باصلاح جميع انواع الاجهزة الكهربائية والمنزلية،
-                يمتلك خبرة واسعة في التشخيص والاصلاح السريع، ويحرص علي
-                الالتزام بالمواعيد وتقديم خدمة احترافية وضمان علي كل قطعة
-                غيار يتم تركيبها لعملائه الكرام.
+                فني متخصص باصلاح جميع انواع الاجهزة الكهربائية والمنزلية، يمتلك
+                خبرة واسعة في التشخيص والاصلاح السريع، ويحرص علي الالتزام
+                بالمواعيد وتقديم خدمة احترافية وضمان علي كل قطعة غيار يتم
+                تركيبها لعملائه الكرام.
               </p>
             </div>
 

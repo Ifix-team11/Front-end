@@ -278,7 +278,7 @@ const HomeAppliancesServices = () => {
   ===================================================== */
 
   const handleBooking = (technicianId: number) => {
-    navigate(`/booking/${technicianId}`);
+    navigate(`/booking/appliances/${technicianId}`);
   };
 
   /* =====================================================

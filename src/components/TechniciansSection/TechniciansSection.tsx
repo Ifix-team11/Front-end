@@ -20,7 +20,7 @@ const TechniciansSection = () => {
 
           <div className="role-switch">
             <NavLink
-              to="/technicians"
+              to="#"
               className={({ isActive }) => (isActive ? "active-btn" : "")}
             >
               فنيون

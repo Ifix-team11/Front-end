@@ -323,7 +323,7 @@ const PestControlServices = () => {
   ===================================================== */
 
   const handleBooking = (technicianId: number) => {
-    navigate(`/booking/${technicianId}`);
+    navigate(`/booking/pestcontrol/${technicianId}`);
   };
 
   /* =====================================================

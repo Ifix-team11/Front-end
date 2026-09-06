@@ -144,14 +144,14 @@ function Navbar() {
 
             {/* Technicians */}
             <li className="nav-item">
-              <Link className="nav-link" to="/technicians">
+              <Link className="nav-link" to="#">
                 الفنيين والمراكز
               </Link>
             </li>
 
             {/* Partners */}
             <li className="nav-item">
-              <Link className="nav-link" to="/partners">
+              <Link className="nav-link" to="#">
                 كن شريكنا
               </Link>
             </li>
