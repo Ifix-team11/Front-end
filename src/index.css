@@ -257,3 +257,44 @@ p {
     padding: 0 20px;
   }
 }
+
+/* ==================================================
+   Premium Buttons
+   ================================================== */
+
+.btn-primary-premium {
+  background: linear-gradient(135deg, #2b5adb 0%, #1e3a8a 100%);
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(43, 90, 219, 0.25);
+}
+
+.btn-primary-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 90, 219, 0.35);
+  color: #ffffff;
+}
+
+.btn-primary-premium:active {
+  transform: translateY(1px);
+}
+
+.btn-outline-premium {
+  background: #ffffff;
+  color: #2b5adb;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-premium:hover {
+  background: #f8fafc;
+  border-color: #2b5adb;
+  color: #1e3a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 90, 219, 0.1);
+}
+
+.btn-outline-premium:active {
+  transform: translateY(1px);
+}

@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+// import Navbar from "../../components/Navbar/Navbar";
+// import Footer from "../../components/Footer/Footer";
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import TechnicianCard from "../../components/TechnicianCard/TechnicianCard";
 import { technicians, reviews, brandLogos } from "../../data/mockData";
@@ -45,7 +45,7 @@ const TechnicianDetailPage = () => {
 
   return (
     <div className={styles.page}>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className={`ifix-container ${styles.content}`}>
         <div className={styles.breadcrumb}>
@@ -212,7 +212,7 @@ const TechnicianDetailPage = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

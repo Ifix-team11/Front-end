@@ -10,15 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.19.0",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "formik": "^2.4.9",
     "lucide-react": "^1.28.0",
     "react": "^19.2.8",
     "react-bootstrap": "^2.10.10",
-    "bootstrap-icons": "^1.13.1",
-    "lucide-react": "^1.28.0",
-    "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.2"
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.18.2",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
